@@ -6,7 +6,12 @@
 h1,h3{
     color: red;
 }
+ /* id selector  */
 #login{
     background-color: white;
 
+}
+#signup{
+    background-color: red;
+    color: white;
 }
