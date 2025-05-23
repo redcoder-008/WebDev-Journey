@@ -1,3 +1,8 @@
-*{
+*{  
+    /* Universal selector */
     font-family: 'Courier New';
+}
+/* Element Selector */
+h1,h3{
+    color: red;
 }
