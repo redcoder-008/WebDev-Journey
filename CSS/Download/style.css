@@ -23,4 +23,13 @@ h1,h3{
 /* Descendant selector  */
 p a{
     color: purple;
+    background-color: yellow;
+}
+/* sibling combinator  */
+p + h3{
+    text-decoration: underline;
+}
+.upvote + button{
+    background-color: cornflowerblue;
+    color: darkblue;
 }
