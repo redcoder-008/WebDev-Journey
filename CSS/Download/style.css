@@ -33,3 +33,7 @@ p + h3{
     background-color: cornflowerblue;
     color: darkblue;
 }
+/* child combinator  */
+div > input{
+    background-color: pink;
+}
