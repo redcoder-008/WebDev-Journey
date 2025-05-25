@@ -1,0 +1,30 @@
+div{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color:#2F4F7C ;
+    border: 2px solid black;
+    margin: 10px auto;
+}
+div:nth-of-type(2n){
+    background-color:#F87060 ;
+}
+div:nth-of-type(3n){
+    background-color: #CDD7D6;
+}
+#one{
+    transform: rotate(1deg);
+}
+#two{
+    transform: scale(1.3);
+}
+#three{
+    transform: translateX(-50px);
+}
+#four{
+    transform: skew(30deg);
+}
+#five:hover{
+    transition: transform 1s  ;
+    transform: rotate(20deg) scale(1.3) skew(30deg);
+}
