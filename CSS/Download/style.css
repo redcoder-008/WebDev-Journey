@@ -68,3 +68,10 @@ span:nth-of-type(2n){
     font-size: ;
     border: 3px;
 }
+ /* pseudo element  */
+ h1::first-letter{
+    color: green;
+ }
+ p::selection{
+    background-color: aqua;
+ }
