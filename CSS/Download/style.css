@@ -65,7 +65,7 @@ input[type="radio"]:checked +label{
 }
 span:nth-of-type(2n){
     color :brown;
-    font-size: ;
+    
     border: 3px;
 }
  /* pseudo element  */
@@ -75,3 +75,4 @@ span:nth-of-type(2n){
  p::selection{
     background-color: aqua;
  }
+ 
