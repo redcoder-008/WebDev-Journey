@@ -44,3 +44,10 @@ input[type="text"]{
 input[type="password"]{
     color: yellow;
 }
+input[type]{
+    background-color: ghostwhite;
+}
+/* PRactise qs (write css statement to set the color for the paragraph onside div with the id "mdId ") */
+div[id="myId"]{
+color:green;
+}
