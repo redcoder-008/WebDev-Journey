@@ -37,3 +37,10 @@ p + h3{
 div > input{
     background-color: pink;
 }
+/* Attribute Selector  */
+input[type="text"]{
+    color:red;
+}
+input[type="password"]{
+    color: yellow;
+}
