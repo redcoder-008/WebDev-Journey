@@ -51,3 +51,8 @@ input[type]{
 div[id="myId"]{
 color:green;
 }
+/* pseudo class  */
+button:hover{
+    background-color: black ;
+    color: white;
+}
