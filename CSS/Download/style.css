@@ -59,3 +59,12 @@ button:hover{
 button:active{
     background-color: pink;
 }
+input[type="radio"]:checked +label{
+    font-weight: bolder;
+    color: red;
+}
+span:nth-of-type(2n){
+    color :brown;
+    font-size: ;
+    border: 3px;
+}
