@@ -20,3 +20,7 @@ h1,h3{
     background-color: green;
     color: aliceblue;
 }
+/* Descendant selector  */
+p a{
+    color: purple;
+}
