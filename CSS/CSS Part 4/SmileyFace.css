@@ -9,10 +9,22 @@
     width: 200px;
     height: 75px;
     border-radius:0 0  50px 50px;
+    background-color: black;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+
+}
+.mouth:hover{
+    
+    width: 200px;
+    height: 75px;
+    border-radius:0 0  50px 50px;
     background-color: red;
-position: absolute;
-top: 250px;
-left: 100px;
+    transition: 0.5s ;
+    position: absolute;
+    top: 250px;
+    left: 100px;
 }
 .lefteye{
     width: 70px;
