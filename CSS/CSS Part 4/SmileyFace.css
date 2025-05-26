@@ -5,3 +5,31 @@
     width: 400px;
     
 }
+.mouth{
+    width: 200px;
+    height: 75px;
+    border-radius:0 0  50px 50px;
+    background-color: red;
+position: absolute;
+top: 250px;
+left: 100px;
+}
+.lefteye{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    
+}
+.righteye{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+top: 100px;
+right: 50px;
+}
