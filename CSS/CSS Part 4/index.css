@@ -1,4 +1,4 @@
-div{
+diiv{
     width: 200px;
     height: 50px;
     text-align: center;
@@ -31,5 +31,23 @@ div:nth-of-type(3n){
     transform: rotate(20deg) scale(1.3) skew(30deg);
       background-image: url("background\ image.jpg");
     background-size:cover;
+
+}
+div{
+     width: 200px;
+    height: 50px;
+    text-align: center;
+    background-color:#2F4F7C ;
+    border: 2px solid black;
+    margin: 10px auto;
+}
+#absolute{
+   
+    background-color: yellow;
+    
+position: absolute;
+    
+inset-inline-start: 40px;
+inset-block-start: 40px;
 
 }
