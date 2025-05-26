@@ -1,0 +1,21 @@
+#container{
+    height: 50px;
+    width: 900px;
+    background-color: pink;
+    border: 2px solid lightblue;
+    border-radius: 15px;
+    display: flex;
+    justify-content:flex-start;
+    /* align-items: center; */
+    
+    align-content: center;
+
+}
+nav div{
+    height: 50px;
+    width: 80px;
+    border: 10px;
+    margin-left: 10px;
+    font-size: 24px;
+    line-height: 50px;
+}
