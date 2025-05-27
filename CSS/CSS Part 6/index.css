@@ -9,9 +9,12 @@
 }
 .child{
     
-    height: 50px;
+    height: 40px;
     width: 100px;
     background-color: greenyellow;
     border: 2px solid black;
 }
-
+.one{
+ grid-column-start: 1 ;
+ grid-column-end: 3;
+}
