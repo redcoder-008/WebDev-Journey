@@ -34,8 +34,8 @@
     border-radius: 50%;
     width: 100px;
     height: 100px;
-    /* border: 2px solid black; */
-    border-top: 1px solid black;
+    border: 2px solid black;
+    border-top-color:aqua;
     animation: rotate 1s linear infinite ;
 }
 @keyframes rotate {
