@@ -32,7 +32,7 @@
 }
 
 .music-player {
-    background-color: green;
+    background-color:#232323;
     position: fixed;
     bottom: 0px;
     height: 72px;
@@ -194,4 +194,39 @@ a {
 .card-info{
     font-size: 0.85rem;
     opacity: 0.5;
+}
+
+}
+.music-player{
+    display: hidden;
+}
+.card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: all 0.4s linear;
+    background-color: #1f1f1f;
+    border-radius: 1.05rem;
+ 
+}
+.music-player{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
+    margin: 1rem;
+    border-radius: 1rem;
+    opacity: 0.9;
+    width: 95%;
+    
+}
+.music-player img{
+    height: 1.2rem;
+    width: 1.2rem;
+    padding: 2rem;
+
+}
+@media( max-width:375px ) and (min-width:1024px){
+    .sidebar{
+        display: none;
+    }
 }
