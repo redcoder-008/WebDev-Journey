@@ -148,6 +148,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0 1rem 0;
+    z-index: 10;
 }
 .sticky-nav-icons  {
    margin-left: 0.7rem;
@@ -225,8 +226,18 @@ a {
     padding: 2rem;
 
 }
-@media( max-width:375px ) and (min-width:1024px){
+@media ( max-width:375px ){
+   .sidebar{
+        display: none;
+    }
+       .card{
+        width: 100%;
+    }
+}
+@media(max-width:1024px){
     .sidebar{
         display: none;
     }
+ 
+ 
 }
