@@ -151,13 +151,23 @@
 
         </div>
         <div class="music-player">
-            <div class="play-control">
-                <img src="./assects/player_icon1.png" alt="">
-                <img src="./assects/player_icon2.png" alt="">
-                <img src="./assects/player_icon3.png" alt="">
-                <img src="./assects/player_icon4.png" alt="">
-                <img src="./assects/player_icon5.png" alt="">
+            <div class="album"></div>
+            <div class="player"> 
+
+                <div class="player-control">
+                    <img src="./assects/player_icon1.png" class="player-control-icon" alt="">
+                    <img src="./assects/player_icon2.png"class="player-control-icon" alt="">
+                    <img src="./assects/player_icon3.png"class="player-control-icon" alt="">
+                    <img src="./assects/player_icon4.png"class="player-control-icon" alt="">
+                    <img src="./assects/player_icon5.png"class="player-control-icon" alt="">
+                </div>
+                <div class="progress-bar" step:"1">
+                    <span class="curr-time">00:00</span>
+                    <input type="range" min="0" max="100">
+                    <span class="tot-time">3:69</span>
+                </div>
             </div>
+            <div class="controls"></div>
             
         </div>
     </div>
