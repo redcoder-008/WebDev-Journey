@@ -16,3 +16,14 @@ console.log(9!=1);
 
 console.log('5'===5); //compares both value and type 
 console.log('a' > 'A');
+
+//traffic light
+let color ='green';
+if(color=='red'){
+    console.log('stop')
+}else if(color == 'yellow'){
+    console.log('Slow Down');
+}
+else{
+    console.log("GO")
+}
