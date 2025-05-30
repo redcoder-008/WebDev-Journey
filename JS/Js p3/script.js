@@ -9,3 +9,7 @@ console.log(str.indexOf('a'));
 //method chaining
 let newstr= str.toUpperCase().trim();
 console.log(newstr);
+//slice method
+console.log(newstr.slice(2));
+console.log(newstr.slice(1,4));
+console.log(newstr.slice(-1));
