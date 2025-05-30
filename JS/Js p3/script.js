@@ -26,3 +26,8 @@ console.log(clz.slice(4).replace('l','t'))
 let cars=['bmw','rr'];
 cars.push('lambo');
 console.log(cars.shift());
+//array concatination
+let primary=['red','green','yellow'];
+let secondary=['blue','pink'];
+console.log(primary.concat(secondary));
+console.log(primary.reverse());
