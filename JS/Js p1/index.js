@@ -9,3 +9,7 @@ let pencil=5;
 //template literals
 let output = `The total price is : ${pen+pencil} Rupees`;
 console.log(output);
+// operators
+console.log(3>5);
+console.log(3==3);
+console.log(9!=1);
