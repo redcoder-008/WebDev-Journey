@@ -52,8 +52,8 @@ if(string[0]=='a' && string.length > 3 ){
     console.log('it is not a good string')
 }
 //switch statement to print number of days
-let num =5;
-switch (num){
+let day =5;
+switch (day){
     case 1:
         console.log("Monday");
         break;
@@ -78,3 +78,8 @@ switch (num){
         default :
         console.log("Wrong Input");
 }
+
+//alert and prompt
+// alert("something is wrong ");
+let fn = prompt("Enter your first name ");
+console.log('welcome',fn);
