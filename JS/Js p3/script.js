@@ -16,3 +16,9 @@ console.log(newstr.slice(-1));
 //replace method
 let strr="iLoveCoding";
 console.log(strr.replace('i','we'));
+console.log(strr.repeat(2));
+//practise question
+let msg='          help!'
+console.log(msg.trim().toUpperCase());
+let clz='apnacollege';
+console.log(clz.slice(4).replace('l','t'))
