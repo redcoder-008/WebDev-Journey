@@ -19,6 +19,10 @@ console.log(strr.replace('i','we'));
 console.log(strr.repeat(2));
 //practise question
 let msg='          help!'
-console.log(msg.trim().toUpperCase());
+console.warn(msg.trim().toUpperCase());
 let clz='apnacollege';
 console.log(clz.slice(4).replace('l','t'))
+//array methods
+let cars=['bmw','rr'];
+cars.push('lambo');
+console.log(cars.shift());
