@@ -13,3 +13,6 @@ console.log(newstr);
 console.log(newstr.slice(2));
 console.log(newstr.slice(1,4));
 console.log(newstr.slice(-1));
+//replace method
+let strr="iLoveCoding";
+console.log(strr.replace('i','we'));
