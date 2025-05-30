@@ -44,3 +44,10 @@ else{
     console.log(`price is Rs 50`);
     
 }
+//is it good sting or not 
+let string ='aman';
+if(string[0]=='a' && string.length > 3 ){
+    console.log('It is good sting ');
+}else{
+    console.log('it is not a good string')
+}
