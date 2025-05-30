@@ -1,14 +1,14 @@
 let num =10;
-if(num%2==0){
+if(num%10==0){
     console.log("good");
 }
 else{
     console.log("bad");
 }
 // Q2--take the user's name and age aas input using prompt.Then return back the follwoing statement to the user as an alert (by substituting their name and age)
-// let name= prompt("Enter your name");
-// let age = prompt("Enter your age");
-// alert(`$name is $age years old`);
+let name= prompt("Enter your name");
+let age = prompt("Enter your age");
+alert(`${name} is ${age} years old.`);
 
 let number = 3;
 switch (number){
@@ -36,6 +36,16 @@ if(string[0]=='a'|| string[0]=='A' && string.length > 3)
 }
 else{
     console.log("not a golden string")
+}
+
+//wap to check if 2 numbers have the same last digit
+let num1 = 1234;
+let num2= 213;
+if(num1%10 == num2%10){
+    console.log("same")
+}
+else{
+    console.log("not same")
 }
 
      
