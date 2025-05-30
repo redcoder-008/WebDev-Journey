@@ -27,4 +27,15 @@ case 1 :
     default:
         console.error("Wrong input;")
 }
+
+// Q4 A string is a golden srting if it starts with the character 'A' or 'a' and has total length greater then 5
+let string = 'au';
+if(string[0]=='a'|| string[0]=='A' && string.length > 3)
+{
+    console.log("Golden String");
+}
+else{
+    console.log("not a golden string")
+}
+
      
