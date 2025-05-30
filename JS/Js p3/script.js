@@ -29,5 +29,8 @@ console.log(cars.shift());
 //array concatination
 let primary=['red','green','yellow'];
 let secondary=['blue','pink'];
-console.log(primary.concat(secondary));
-console.log(primary.reverse());
+// console.log(primary.concat(secondary));
+// // console.log(primary.reverse());
+console.log(primary.splice(1,0,'aquq','brown'));
+console.log(secondary.splice(0,0,'car'));
+console.log(secondary);
