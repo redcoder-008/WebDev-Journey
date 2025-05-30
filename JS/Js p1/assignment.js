@@ -10,8 +10,8 @@ let name= prompt("Enter your name");
 let age = prompt("Enter your age");
 alert(`${name} is ${age} years old.`);
 
-let number = 3;
-switch (number){
+let quater = 3;
+switch (quater){
 case 1 :
     console.log("January,February,March");
     break;
