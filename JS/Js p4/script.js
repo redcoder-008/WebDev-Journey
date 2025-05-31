@@ -31,6 +31,7 @@
 //Nested loops in array
 let fruits =[['mango','banana'],['orange','litchee'],['apple','grapes']];
 for(let i=0;i<fruits.length;i++){
+    console.log()
     for(let j=0;j<fruits[i].length;j++){
         console.log(fruits[i][j]);
     }
