@@ -9,10 +9,11 @@
 //         console.log(j);
 //     }
 // }
+
 //favourite movie
 
 const favmov="avatar";
-let guess = prompt("Enter the movie name");
+// let guess = prompt("Enter the movie name");
 while((guess != favmov) && (guess != "quit")){
     
     guess = prompt("Wrong!! Please Try Again");
@@ -26,3 +27,5 @@ if(guess == 'quit'){
 if(favmov==guess){
     console.log("congratulation");
 }
+
+//loops in array
