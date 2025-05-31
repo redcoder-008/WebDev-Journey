@@ -12,20 +12,27 @@
 
 //favourite movie
 
-const favmov="avatar";
-// let guess = prompt("Enter the movie name");
-while((guess != favmov) && (guess != "quit")){
+// const favmov="avatar";
+// // let guess = prompt("Enter the movie name");
+// while((guess != favmov) && (guess != "quit")){
     
-    guess = prompt("Wrong!! Please Try Again");
+// //     guess = prompt("Wrong!! Please Try Again");
 
+// }
+
+// if(guess == 'quit'){
+//     console.log("Looser")
+// }
+
+// if(favmov==guess){
+//     console.log("congratulation");
+// }
+
+//Nested loops in array
+let fruits =[['mango','banana'],['orange','litchee'],['apple','grapes']];
+for(let i=0;i<fruits.length;i++){
+    for(let j=0;j<fruits[i].length;j++){
+        console.log(fruits[i][j]);
+    }
 }
 
-if(guess == 'quit'){
-    console.log("Looser")
-}
-
-if(favmov==guess){
-    console.log("congratulation");
-}
-
-//loops in array
