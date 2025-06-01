@@ -37,8 +37,19 @@ let factorial = 1;
 for(let k=1;k<=n;k++){
 
     factorial *=k;
-    console.log(factorial)
+    
 
 
 }
-console.log(`the factorial of ${n} is ${factorial}`)
+console.log(`the factorial of ${n} is ${factorial}`);
+
+// Q5 Fin the largest number is the array 
+let largest =0;
+
+let numbers = [1,4,2,4,6,113,8,2,9];
+for( num of numbers){
+    if(num>largest){
+        largest = num;
+    }
+}
+console.log(`the largest number on an arrat is ${largest}`);
