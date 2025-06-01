@@ -25,8 +25,20 @@ console.log( `Total no of digits in  ${num} is ${count}`);
  while(copy >0){
     //  let remainder= Math.floor(copy%10);
      let remainder=(copy%10);
-     console.log(remainder);
+     
    copy=Math.floor(copy/10);
    sum+=remainder;
 }
-console.log(sum)
+console.log(`The sum of no of digits in ${numb} is ${sum}`);
+
+// Q4 factorial of any number 
+let n=5;
+let factorial = 1;
+for(let k=1;k<=n;k++){
+
+    factorial *=k;
+    console.log(factorial)
+
+
+}
+console.log(`the factorial of ${n} is ${factorial}`)
