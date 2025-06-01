@@ -14,3 +14,13 @@ const post={
     repost:100,
     tags:["karan","elon musk","Tim cook"]
 }
+const classroom ={
+    karan:{
+        grade:"A",
+        age : 20
+    },
+    kamat:{
+        grade:"A+",
+        age:21
+    }
+}
