@@ -35,3 +35,5 @@ const classInfo = [
     city:"Berlin"
   }
 ]
+
+console.log(Math.ceil(9.9999));
