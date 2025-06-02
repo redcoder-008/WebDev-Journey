@@ -56,11 +56,11 @@ let rand3 = Math.floor(Math.random() *5 +20);   //Generate ramdom nummber from r
 console.log(rand3);
 
 // Guessing Game
-let max = prompt("Enter a max value");
-let random = Math.floor(Math.random()*10 + max);
+const max = prompt("Enter a max value");
+let random = Math.floor(Math.random()*max) +1;
 console.log(random);
 let guess = prompt("Enter your First Guess");
-while(guess!=random ){
+while(true ){
     if( guess == "quit")
         {
             console.log("you quit the game");
@@ -70,6 +70,7 @@ while(guess!=random ){
 
    else if  ( random == guess){
   console.log("Congratulation you Guessed the correct answer");
+  break;
    }
 
    else  guess= prompt("Wrong choice....Please try again");
