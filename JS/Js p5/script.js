@@ -37,3 +37,14 @@ const classInfo = [
 ]
 
 console.log(Math.ceil(9.9999));
+console.log(Math.random(0,9));
+//Random INteger
+let num = Math.random();
+num = num*10000;
+num= Math.floor(num);
+console.log(num);
+console.log(++num);
+// alternative
+let rand=Math.floor(Math.random()*10 +1); //Generate ramdom nummber from range 1 to 10;
+
+console.log(rand);
