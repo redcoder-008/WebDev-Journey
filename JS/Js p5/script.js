@@ -24,3 +24,14 @@ const classroom ={
         age:21
     }
 }
+const classInfo = [
+    {
+        name:"Karan",
+        grade:"A+",
+        city:"Berlin"
+    },
+  {   name:"Kamat",
+    grade:"A+",
+    city:"Berlin"
+  }
+]
