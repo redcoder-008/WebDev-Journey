@@ -48,3 +48,9 @@ console.log(++num);
 let rand=Math.floor(Math.random()*10 +1); //Generate ramdom nummber from range 1 to 10;
 
 console.log(rand);
+let rand1 = Math.floor(Math.random()*100 +1); //Generate ramdom nummber from range 1 to 100;
+console.log(rand1);
+let rand2 = Math.floor(Math.random() *5 );   //Generate ramdom nummber from range 1 to 5;
+console.log(rand2);
+let rand3 = Math.floor(Math.random() *5 +20);   //Generate ramdom nummber from range 20 to 25;
+console.log(rand3);
