@@ -68,13 +68,19 @@ while(true ){
 
         } 
 
-   else if  ( random == guess){
+   if  ( random == guess){
   console.log("Congratulation you Guessed the correct answer");
   break;
    }
 
-   else  guess= prompt("Wrong choice....Please try again");
-  } 
+   else if (guess>random){
+    guess= prompt(" Wrong choice....Please try again(Hint:Enter small number)");
+} 
+else{
+      guess= prompt(" Wrong choice....Please try again(Hint:Enter big number)");
+
+  }
+}
 
 
 
