@@ -65,3 +65,21 @@ function multiplegreet(func,count){
     }
 
 }
+// oddeven factory
+function oddEvenFactory(request){
+    if(request == "even"){
+        let even = function even(num){
+            return (num%2==0);
+        }
+        return even;
+    }
+    else if(request == "odd"){
+        let odd = function odd(num){
+            return (!(num%2==0));
+        }
+        return odd;
+    }
+    else{
+        console.log("Wrong Request");
+    }
+}
