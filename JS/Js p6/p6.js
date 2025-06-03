@@ -29,3 +29,14 @@ function poem(){
     }
  }
  table(5);
+// create a function that returns the sum of numbersfrom 1 to n.
+function sumton(n){
+    let sum=0;
+    for(let i=1;i<=n;i++){
+
+        sum+=i;
+    }
+    return sum;
+
+}
+console.log(sumton(4));
