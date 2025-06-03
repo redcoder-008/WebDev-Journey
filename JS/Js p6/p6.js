@@ -16,3 +16,7 @@ function poem(){
     console.log(name);
  }
  printname("karan");
+ //practise qs  gives average
+ function findaverage(num1,num2,num3){
+    console.log(`Average of ${num1},${num2} and ${num3} is ${(num1+num2+num3 )/3}`);
+ }
