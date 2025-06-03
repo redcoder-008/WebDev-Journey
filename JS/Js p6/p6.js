@@ -83,3 +83,14 @@ function oddEvenFactory(request){
         console.log("Wrong Request");
     }
 }
+
+let calculator={
+    add: function add(a,b) {return a+b;},
+    subtract: function sub (a,b){ return a-b;},
+    product: function mul(a,b) {
+        return a*b;
+    }
+
+
+}
+
