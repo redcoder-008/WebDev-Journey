@@ -28,3 +28,50 @@ function getUnique(str){
 }
 getUnique(string);
 console.log(getUnique(string));
+
+//Q3 function that accept list and return the largest country name as output
+
+let countryy=["Australia","Germany","UnitedStatesofAmerica"];
+let ansidx=0;
+function findlargest(country){
+    for(let i=0;i<country.length;i++){
+        let currcharLength = country[i].length; 
+        let anslength = country[ansidx].length;
+        if(currcharLength > anslength){
+            ansidx= i;
+        }
+    }
+    console.log(country[ansidx]);
+    return country[ansidx];
+}
+findlargest(countryy);
+// function to count number of vowels;
+
+let s= "aeiouaeiou";
+let Totalvowels = 0;
+function calculatevowels(stringg){
+for(charr of stringg){
+    if(charr =='a'  ||
+        charr =='e' ||
+        charr =='i' ||
+        charr =='o' ||
+        charr =='u')
+        {
+            Totalvowels++;
+        }
+    
+}
+
+return Totalvowels;
+    
+}
+console.log(calculatevowels(s));
+
+// generate random from given range
+
+function generaterandom(start,end){
+    let diff = end-start;
+    return (Math.floor(Math.random() *diff )+start );
+}
+
+console.log(generaterandom(2,3));
