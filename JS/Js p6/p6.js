@@ -53,3 +53,15 @@ function concate(str) {
 
 let stri = ['1', '3', '2',];
 console.log();
+
+//higher order function 
+
+ let fun=function greet(){
+    console.log("Namaste Doston");;
+}
+function multiplegreet(func,count){
+    for(let i=1;i<=count;i++){
+        func();
+    }
+
+}
