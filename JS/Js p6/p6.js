@@ -11,3 +11,8 @@ function poem(){
     console.log(random)
  }
  roll();
+
+ function printname(name){
+    console.log(name);
+ }
+ printname("karan");
