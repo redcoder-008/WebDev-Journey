@@ -14,7 +14,13 @@ const student = {
 const func =(a,b) => {
     return a+b;
 }
-
+try{
+    console.log(student.name);
+}
+catch(exp){
+    console.log("undefined");
+    console.log(exp);
+}
 
 
 
