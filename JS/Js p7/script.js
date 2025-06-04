@@ -23,4 +23,17 @@ catch(exp){
 }
 
 
+// set timme out
+setTimeout(()=>{
+    console.log("Hello")
+},3000);
+console.log("timer")
+ // set interval
+
+ let id = setInterval(()=>{
+    console.log("Hellow");
+ },1000);
+
+ console.log( "id",id);
+// 
 
