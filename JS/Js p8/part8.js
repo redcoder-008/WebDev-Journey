@@ -22,10 +22,15 @@ let student = [
         mark:99,
     },
 ]
+//map
 let gpa = student.map((el) => {
     return el.mark/10;
         
     });
-    let ans = arr.filter((el)=>{
-        return el%2==0;
+    //filter
+    let oddnum = arr.filter((el)=>{
+        return el%2!=0;
+    })
+let checkevery = oddnum.every((el)=>{
+        return el%2!=0;
     })
