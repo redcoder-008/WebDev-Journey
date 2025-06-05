@@ -65,3 +65,5 @@ let min= arr.reduce((res,el)=>{
 function area (r,pi=3.142){
     return pi*(r*r);
 }
+
+console.log(...arr); //spread function (it will print all the element individually)
