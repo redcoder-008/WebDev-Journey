@@ -3,3 +3,8 @@ function print(item){
     console.log(item);
 }
 arr.forEach( (item)=> {console.log(item)});
+
+
+let square = arr.map(el =>{
+    return el*el;
+})
