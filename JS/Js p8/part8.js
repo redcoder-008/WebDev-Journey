@@ -80,3 +80,17 @@ const data=[
     },
 ]
 let datas = [...data,id=1,country="Nepal"];
+//rest
+function sum(...args){
+    for(item of args){
+        console.log(item);
+
+    }
+
+}
+function sum(...args){
+    console.log(args.reduce((sum,el)=>{
+        return sum+el;
+    }));
+}
+
