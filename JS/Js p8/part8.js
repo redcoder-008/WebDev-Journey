@@ -67,3 +67,16 @@ function area (r,pi=3.142){
 }
 
 console.log(...arr); //spread function (it will print all the element individually)
+let char = [..."karan"];
+
+const data=[
+    {
+        email:"karan@gmail.com",
+        password:"karan"
+    },
+    {
+        email:"kamat@gmail.com",
+        password:"karan"
+    },
+]
+let datas = [...data,id=1,country="Nepal"];
