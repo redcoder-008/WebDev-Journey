@@ -34,3 +34,7 @@ let gpa = student.map((el) => {
 let checkevery = oddnum.every((el)=>{
         return el%2!=0;
     })
+
+let ghata = oddnum.reduce((result,el)=>{
+    return result-el;
+})
