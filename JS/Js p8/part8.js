@@ -1,4 +1,4 @@
-let arr=[1,2,3,4,5];
+let arr=[4,3,4,5];
 function print(item){
     console.log(item);
 }
@@ -55,3 +55,13 @@ let check= arr2.every((el)=>{
     return el%10 == 0;
 
 },);
+
+//find the mimimum in the array
+let min= arr.reduce((res,el)=>{
+    if(res<el) return res;
+    else return el;
+})
+//default parameter
+function area (r,pi=3.142){
+    return pi*(r*r);
+}
