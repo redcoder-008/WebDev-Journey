@@ -1,8 +1,8 @@
-let arr=[1,2,3,4,5,6];
+let arr=[1,2,3,4,5];
 function print(item){
     console.log(item);
 }
-arr.forEach( (item)=> {console.log(item)});
+// arr.forEach( (item)=> {console.log(item)});
 
 
 let square = arr.map(el =>{
@@ -25,16 +25,33 @@ let student = [
 //map
 let gpa = student.map((el) => {
     return el.mark/10;
-        
-    });
-    //filter
-    let oddnum = arr.filter((el)=>{
-        return el%2!=0;
-    })
+    
+});
+//filter
+let oddnum = arr.filter((el)=>{
+    return el%2!=0;
+})
 let checkevery = oddnum.every((el)=>{
-        return el%2!=0;
-    })
+    return el%2!=0;
+})
+let arr2=[100,200,400];
 
-let ghata = oddnum.reduce((result,el)=>{
+let ghata = arr2.reduce((result,el)=>{
     return result-el;
 })
+//maximum in an array
+
+let result = arr2.reduce((max,el)=>{
+    if(max>el){
+        return max;
+    }
+    else{
+        return el;
+    }
+})
+
+//check whether all the element is multiple of 10 or not
+let check= arr2.every((el)=>{
+    return el%10 == 0;
+
+},);
