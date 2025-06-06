@@ -16,3 +16,5 @@
     i.style.color= "red";
 
  }
+
+ console.log(heading.);
