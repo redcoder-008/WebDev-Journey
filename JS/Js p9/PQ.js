@@ -25,6 +25,26 @@ button.innerText = "Click Me";
 
 body.append(input);
 body.append(button);
-input.placeholder = "Username";
-button.id = "btn";
- document.querySelector("#id").classList.add(button);
+//Qs 2 
+button.setAttribute("id","btn");
+
+input.setAttribute("placeholder", "usernaam");
+//Qs3 
+let btn = document.querySelector('#btn');
+
+ btn.classList.add('button');
+
+ //Qs4
+
+ let head= document.createElement('h1');
+
+ head.innerHTML = "<u> Dom Practise</u>";
+//  head.style.color= purple;
+ body.append(head);
+
+ //Q5
+ let paragraph = document.createElement('p');
+ paragraph.innerText="apna college Delta Practise";
+ body.append(paragraph);
+
+
