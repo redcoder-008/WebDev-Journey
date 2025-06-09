@@ -6,8 +6,8 @@
 
  btn.onclick= sayhello
  function sayhello(){
-    alert("hello");
+    console.log("hello");
  }
  for(item of btn){
-    item.onclick= sayhello;
+    item.onmouseenter= sayhello;
  }
