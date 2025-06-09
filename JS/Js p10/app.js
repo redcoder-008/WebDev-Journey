@@ -36,9 +36,24 @@ function getrandomcolor(){
 
 btnn.addEventListener("click",function(){
 let h2= document.querySelector('h2');
-h2.innerText = getrandomcolor();
+// h2.innerText = getrandomcolor();
 h2.style.color = getrandomcolor();
 document.querySelector('div').style.backgroundColor= getrandomcolor();
+
 })
 
+let box = document.querySelector('div');
+box.addEventListener("click" , function(){
+    console.log("box is clicked");
+})
+
+ function changeColor(){
+     console.dir(this.innerText);
+    this.style.backgroundColor = "aqua";
+ }
+
+ box.addEventListener("click" ,changeColor);
+ btnn.addEventListener("click" ,changeColor);
+ box.addEventListener("click" ,changeColor);
+ box.addEventListener("click" ,changeColor);
 
