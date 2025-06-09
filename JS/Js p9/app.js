@@ -23,5 +23,14 @@ let body = document.querySelector('body');
 let newp= document.createElement('p');
 newp.innerText="I am new paragraph 123";
 body.appendChild(newp);
+newp.append("i am moore"); //addat beggning
+newp.prepend("i am prrepend"); //add at starting
 
-//today i did nothing 
+
+//   box.append(newp);
+
+let p = document.querySelector('p');
+let btn = document.createElement('button');
+btn.innerText="I am button";
+p.append('btn');
+p.insertAdjacentElement('afterbegin',btn);
