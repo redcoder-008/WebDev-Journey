@@ -8,6 +8,11 @@
  function sayhello(){
     console.log("hello");
  }
+//  for(item of btn){
+//     item.onmouseenter= sayhello;
+//  }
+
  for(item of btn){
-    item.onmouseenter= sayhello;
+    item.addEventListener("click",sayhello) ;
  }
+
