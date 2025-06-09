@@ -18,3 +18,13 @@
   div.append(para);
 
 div.classList.add('box');
+//Practise Question 1 
+let input = document.createElement('input');
+let button = document.createElement('button');
+button.innerText = "Click Me";
+
+body.append(input);
+body.append(button);
+input.placeholder = "Username";
+button.id = "btn";
+ document.querySelector("#id").classList.add(button);
