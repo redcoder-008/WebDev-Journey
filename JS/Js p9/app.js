@@ -34,3 +34,4 @@ let btn = document.createElement('button');
 btn.innerText="I am button";
 p.append('btn');
 p.insertAdjacentElement('afterbegin',btn);
+btn.remove(); //use to remove 
