@@ -60,20 +60,30 @@
 
 let inp =document.querySelector("input");
 
-inp.addEventListener("keydown",function(event){
-    console.log("key = " ,event.key);
-    console.log("Code = " ,event.code);
-    console.warn("key was pressed");
-    if(event.key == "ArrowUp"){
-        console.log("upar jaa rha hai");
-    } else if(event.key == "ArrowDown"){
-        console.log("niche jaa rha hai")
+// inp.addEventListener("keydown",function(event){
+//     console.log("key = " ,event.key);
+//     console.log("Code = " ,event.code);
+//     console.warn("key was pressed");
+//     if(event.key == "ArrowUp"){
+//         console.log("upar jaa rha hai");
+//     } else if(event.key == "ArrowDown"){
+//         console.log("niche jaa rha hai")
 
-    }else if(event.key == "ArrowLeft"){
-        console.log("left jaa rha hai");
+//     }else if(event.key == "ArrowLeft"){
+//         console.log("left jaa rha hai");
 
-    }
-    else if(event.key == "ArrowRight"){
-        console.log("Right jaa rha hai");
-    }
+//     }
+//     else if(event.key == "ArrowRight"){
+//         console.log("Right jaa rha hai");
+//     }
+// })
+let form = document.querySelector("form");
+form.addEventListener("submit" , function(event){
+event.preventDefault();
+let user = document.querySelector("#user");
+let pass = document.querySelector("#pass");
+
+console.log(user.value);
+console.log(pass.value);
 })
+ 
