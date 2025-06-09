@@ -77,14 +77,55 @@ let inp =document.querySelector("input");
 //         console.log("Right jaa rha hai");
 //     }
 // })
-let form = document.querySelector("form");
-form.addEventListener("submit" , function(event){
-event.preventDefault();
-let user =this.elements[0];
-let pass = document.querySelector("#pass");
+// let pass = document.querySelector("#pass");
+// let form = document.querySelector("form");
+// form.addEventListener("submit" , function(event){
+//     event.preventDefault();
+//     let user =this.elements[0];
 
-console.log(user.value);
-console.log(pass.value);
-alert( `hi ${user.value} your password is set to ${pass.value}`)
+// console.log(user.value);
+// console.log(pass.value);
+// alert( `hi ${user.value} your password is set to ${pass.value}`)
+// })
+//  pass.addEventListener("change" , function(){
+//     console.log("changed");
+//     console.log(this.value);
+
+//  })
+//   pass.addEventListener("input" , function(){
+//     console.log("input");
+//     console.log(this.value);
+    
+//  })
+// let input = document.querySelector("input");
+// let p = document.querySelector("p");
+// input.addEventListener("input",function(){
+//     console.log(input.value);
+//     p.innerText = input.value;
+// })
+
+// let btn = document.createElement("button");
+// btn.innerText= "button 1 "
+// document.querySelector("body").append(btn);
+// let select = document.querySelector("button");
+
+// // select.addEventListener("onclick",function(){
+// //     select.style.color= 'green';
+// //     console.log("clicked");
+// // })
+
+// select.onclick= change;
+// function change(){
+//     console.log("hellow buddy");
+//     this.style.color= "green";
+
+// }
+
+let input = document.querySelector("input");
+let head = document.querySelector("h1");
+input.addEventListener("input",function(){
+    console.log(input.value);
+      const filtered = input.value.replace(/[^a-zA-Z ]/g, '');
+      input.textContent = filtered;
+    head.innerText= input.value;
 })
- 
