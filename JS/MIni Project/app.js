@@ -37,7 +37,7 @@ btn.addEventListener("click",function(){
    input.value="";
    item.append(delbutton);
    delbutton.addEventListener("click", function(){
-      console.log("hi");
+
       item.remove();
    })
    
