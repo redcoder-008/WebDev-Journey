@@ -1,0 +1,13 @@
+.div{
+    height: 100px;
+    width: 250px;
+    background-color: pink;
+}
+ul{
+    background-color: aqua;
+
+}
+li{
+    color: red;
+    background-color: black;
+}
