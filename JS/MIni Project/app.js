@@ -27,14 +27,27 @@ let ul= document.querySelector("ul");
 
 btn.addEventListener("click",function(){
    let item = document.createElement("li");
-   console.log(input.value);
+   let delbutton = document.createElement("button");
+   delbutton.innerText="Delete Task";
+   delbutton.classList.add("delete");
+   
    console.log("clicked");
    item.innerText= input.value;
    ul.append(item);
    input.value="";
+   item.append(delbutton);
+   delbutton.addEventListener("click", function(){
+      console.log("hi");
+      item.remove();
+   })
+   
+     
+   })
 
 
-})
+
+
+
 
 
  
