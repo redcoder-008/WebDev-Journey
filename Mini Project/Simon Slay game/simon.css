@@ -1,7 +1,7 @@
 body{
     text-align: center;
-    background-color: white;
-    color: black;
+    background-color: aqua;
+    /* color: black; */
 }
 .btn{
     height: 200px;
@@ -15,16 +15,16 @@ body{
     
 }
 .red{
-    background-color: red;
+    background-color:#d95980;
 }
 .yellow{
-    background-color:yellow;
+    background-color:#f99b45;
 }
-.blue{
-    background-color:blue;
+.green{
+    background-color: #63aac0;
 }
-.aqua{
-    background-color:aqua;
+.purple{
+    background-color:#819ff9;
 }
 
 .btn-container{
@@ -32,4 +32,7 @@ body{
     justify-content: center;
     
     text-align: center;
+}
+.flash{
+    background-color: white;
 }
