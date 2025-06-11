@@ -8,7 +8,7 @@
 //  })
 //  ul.addEventListener("click",function(event){
 //      event.stopPropagation();
-     
+
 //     console.log("ul was clicked");
 //  })
 
@@ -23,31 +23,53 @@
 //to do list
 let input = document.querySelector("input");
 let btn = document.querySelector("button");
-let ul= document.querySelector("ul");
+let ul = document.querySelector("ul");
 
-btn.addEventListener("click",function(){
+btn.addEventListener("click", function () {
    let item = document.createElement("li");
    let delbutton = document.createElement("button");
-   delbutton.innerText="Delete Task";
+   delbutton.innerText = "Delete Task";
    delbutton.classList.add("delete");
-   
-   console.log("clicked");
-   item.innerText= input.value;
+
+   console.log("Button clicked");
+   item.innerText = input.value;
    ul.append(item);
-   input.value="";
+   input.value = "";
    item.append(delbutton);
-   delbutton.addEventListener("click", function(){
+   delbutton.addEventListener("click", function () {
 
       item.remove();
    })
-   
-     
+})
+
+
+
+input.addEventListener('keydown',function(event){
+   if(event.key == "Enter"){
+       console.log("h");
+       let item = document.createElement("li");
+   let delbutton = document.createElement("button");
+   delbutton.innerText = "Delete Task";
+   delbutton.classList.add("delete");
+
+   console.log("Button clicked");
+   item.innerText = input.value;
+   ul.append(item);
+   input.value = "";
+   item.append(delbutton);
+   delbutton.addEventListener("click", function () {
+
+      item.remove();
    })
 
+}
+   console.log("keypressed");
+
+});
 
 
 
 
 
 
- 
+
