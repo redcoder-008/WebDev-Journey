@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    background-color: aqua;
+
     /* color: black; */
 }
 .btn{
@@ -15,16 +15,16 @@ body{
     
 }
 .red{
-    background-color:#d95980;
+    background-color:#ff1500;
 }
 .yellow{
-    background-color:#f99b45;
+    background-color:#ffea37;
 }
 .green{
-    background-color: #63aac0;
+    background-color: #3edd4b;
 }
 .purple{
-    background-color:#819ff9;
+    background-color:	#4b3edd;
 }
 
 .btn-container{
