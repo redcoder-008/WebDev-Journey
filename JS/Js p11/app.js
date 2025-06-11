@@ -43,24 +43,44 @@
 
  //promises
 
- function saveToDb(data,success,failure){
-    let internetSpeed = Math.floor(Math.random()*10 +1);
-    console.log(internetSpeed);
+//  function saveToDb(data,success,failure){
+//     let internetSpeed = Math.floor(Math.random()*10 +1);
+//     console.log(internetSpeed);
 
-    if(internetSpeed >= 5){
-        success();
-    }else{
-        failure();
-    }
- }
+//     if(internetSpeed >= 5){
+//         success();
+//     }else{
+//         failure();
+//     }
+//  }
 
- saveToDb("karan",()=>{
-    console.log("Data saved successfully");
-    saveToDb("kumar",()=>{
-        console.log("another was was saved");
-    },()=>{
-        console.log("another data was not saved");
-    })
- },()=>{
-    console.log("Data was not saved");
- })
+//  saveToDb("karan",()=>{
+//     console.log("Data saved successfully");
+//     saveToDb("kumar",()=>{
+//         console.log("another was was saved");
+//         saveToDb("kamat",()=>{
+//             console.log("3rd data was saved");
+//         }, ()=>{
+//             console.log("3rd data was not saved");
+//         })
+//     },()=>{
+//         console.log("another data was not saved");
+//     })
+//  },()=>{
+//     console.log("Data was not saved");
+//  })
+
+function addToDb(data){
+    return new Promise((success,reject) =>{
+        let internetSpeed= Math.floor(Math.random() *10 +1);
+        console.log(internetSpeed);
+        if(internetSpeed > 5){
+            success("Success : data is saved");
+        }else{
+            reject("Failed : Data is not saved");
+        }
+
+    });
+
+}
+   addToDb("karan");
