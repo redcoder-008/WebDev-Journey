@@ -50,3 +50,4 @@ for(fruit of fruits){
         console.log(internal);
     }
 }
+//loops in js
