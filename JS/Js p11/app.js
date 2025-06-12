@@ -19,7 +19,7 @@
 
 
  //callback hell 
-//  h1= document.querySelector("h1");
+ h1= document.querySelector("h1");
 
  
 // function changecolor(color,delay,nextColorChange){
@@ -70,33 +70,60 @@
 //     console.log("Data was not saved");
 //  })
 
-function addToDb(data){
-    return new Promise((success,reject) =>{
-        let internetSpeed= Math.floor(Math.random() *10 +1);
-        console.log(internetSpeed);
-        if(internetSpeed > 5){
-            success("Success : data is saved");
-        }else{
-            reject("Failed : Data is not saved");
-        }
+// function addToDb(data){
+//     return new Promise((success,reject) =>{
+//         let internetSpeed= Math.floor(Math.random() *10 +1);
+//         console.log(internetSpeed);
+//         if(internetSpeed > 5){
+//             success("Success : data is saved");
+//         }else{
+//             reject("Failed : Data is not saved");
+//         }
 
-    });
+//     });
 
+// }
+//    let request=addToDb("karan");
+//    request.then((result)=>{
+//        console.log("Promise result : ",result)
+//     console.log("Completed");
+//     console.log(request);
+//     return addToDb("kamat");
+// })
+// .then((result)=>{
+//     console.log("Data 2 saved") //promise chaining
+//     console.log("Promise result : ",result)
+// })
+
+// .catch((error)=>{
+//     console.log("InComplete")
+//     console.log("Promise error : ",error)
+//     console.log(request);
+//    })
+
+function changeColor(color,delay){
+    return new Promise ((resolve)=>{
+        setTimeout(()=>{
+            h1.style.color= color;
+            resolve("Hurray!! Color Changed")
+            
+        },delay);
+    })
 }
-   let request=addToDb("karan");
-   request.then((result)=>{
-       console.log("Promise result : ",result)
-    console.log("Completed");
-    console.log(request);
-    return addToDb("kamat");
-})
-.then((result)=>{
-    console.log("Data 2 saved") //promise chaining
-    console.log("Promise result : ",result)
-})
 
-.catch((error)=>{
-    console.log("InComplete")
-    console.log("Promise error : ",error)
-    console.log(request);
-   })
+changeColor("red",1000).then(()=>{
+    console.log("RED color ");
+    return changeColor("blue",1000);
+})
+.then(()=>{
+    console.log("Blue Color");
+    return changeColor("aqua",1000);
+    
+})
+.then(()=>{
+    console.log("Aqua COlor was applied");
+})
+.catch(()=>{
+    console.log("Upps!! Failed");
+})
+console.log(changeColor("red",1000));
