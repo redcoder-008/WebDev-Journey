@@ -47,5 +47,6 @@ if(num1%10 == num2%10){
 else{
     console.log("not same")
 }
+console.log("Basic js")
 
      
