@@ -109,3 +109,5 @@ const employee={
 //destructuring with objects
 let { Username,password,post:level} = employee;
 
+//map,filter,every,sum,spread,rest,destructuring,array methods
+
