@@ -52,3 +52,5 @@ setTimeout(()=>{
     clearInterval(idx)
 },10000);
 
+//this keyword, set timeout,set interval,arrow function
+
