@@ -94,3 +94,4 @@ let calculator={
 
 }
 
+//functions ,expression and methods
