@@ -84,15 +84,19 @@ function addToDb(data){
 
 }
    let request=addToDb("karan");
-   request.then(()=>{
+   request.then((result)=>{
+       console.log("Promise result : ",result)
     console.log("Completed");
     console.log(request);
     return addToDb("kamat");
 })
-.then(()=>{
+.then((result)=>{
     console.log("Data 2 saved") //promise chaining
+    console.log("Promise result : ",result)
 })
-.catch(()=>{
+
+.catch((error)=>{
     console.log("InComplete")
+    console.log("Promise error : ",error)
     console.log(request);
    })
