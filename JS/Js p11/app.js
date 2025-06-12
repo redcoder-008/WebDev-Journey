@@ -83,4 +83,16 @@ function addToDb(data){
     });
 
 }
-   addToDb("karan");
+   let request=addToDb("karan");
+   request.then(()=>{
+    console.log("Completed");
+    console.log(request);
+    return addToDb("kamat");
+})
+.then(()=>{
+    console.log("Data 2 saved") //promise chaining
+})
+.catch(()=>{
+    console.log("InComplete")
+    console.log(request);
+   })
