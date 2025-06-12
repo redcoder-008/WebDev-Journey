@@ -42,3 +42,5 @@ let nestedarr=[[2,3],[3,6],[2,5],6];
 //nested array for tictacctoe game state
 let game= [['x',null,'0'],[null,'x',null],['0',null,'x']];
 game[0][1]='0';
+
+//string and methods 
