@@ -35,3 +35,5 @@ btn.innerText="I am button";
 p.append('btn');
 p.insertAdjacentElement('afterbegin',btn);
 btn.remove(); //use to remove 
+
+//dom query selector,manipulating attribute,classlist property,addming element on page
