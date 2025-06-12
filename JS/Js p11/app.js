@@ -127,3 +127,5 @@ changeColor("red",1000).then(()=>{
     console.log("Upps!! Failed");
 })
 console.log(changeColor("red",1000));
+
+console.log("Topics are like promises,then,catch,result,error,callback hell etc...All the functions are correct and commented out ")
