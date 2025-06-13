@@ -38,5 +38,5 @@ async function demoo() {
     await changeColor("pink", 1000);
     changeColor("aqua", 1000);
 }
-//went home 
+//went home  not coded today anything on js
 
