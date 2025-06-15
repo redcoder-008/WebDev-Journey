@@ -44,5 +44,5 @@ btn.addEventListener("click", async () => {
     let link = await getimage();
     console.log(link);
     img.setAttribute("src", link);
-})
-//this generates new image of dogs
+}) 
+//this generates new image of dogs using 
