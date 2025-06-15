@@ -45,3 +45,4 @@ btn.addEventListener("click", async () => {
     console.log(link);
     img.setAttribute("src", link);
 })
+//this generates new image of dogs
