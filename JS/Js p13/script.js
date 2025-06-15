@@ -45,4 +45,4 @@ btn.addEventListener("click", async () => {
     console.log(link);
     img.setAttribute("src", link);
 }) 
-//this generates new image of dogs using 
+//this generates new image of dogs after clicking 
