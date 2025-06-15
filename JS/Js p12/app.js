@@ -42,7 +42,7 @@ async function demoo() {
 
 let json = '{"fact":"Many cats love having their forehead gently stroked.","length":52}';
 let validres = JSON.parse(json);
-h1.innerText=  validres.fact;
+// h1.innerText=  validres.fact;
 
 let url = "https://catfact.ninja/fact";
 fetch(url).then((response)=>{
@@ -58,7 +58,16 @@ fetch(url).then((response)=>{
 })
 .then((data2)=>{
     console.log("Data 2 : " , data2.fact);
+    h1.innerText = data2.fact;
 })
 .catch((err)=>{
     console.log(err);
 })
+
+// 
+async function getFact() {
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data.fact);
+    
+}
