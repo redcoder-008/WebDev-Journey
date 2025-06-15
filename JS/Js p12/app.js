@@ -43,3 +43,11 @@ async function demoo() {
 let json = '{"fact":"Many cats love having their forehead gently stroked.","length":52}';
 let validres = JSON.parse(json);
 h1.innerText=  validres.fact;
+
+let url = "https://catfact.ninja/fact";
+fetch(url).then((response)=>{
+    console.log(response);
+})
+.catch((err)=>{
+    console.log(err);
+})
