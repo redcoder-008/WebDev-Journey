@@ -66,8 +66,14 @@ fetch(url).then((response)=>{
 
 // 
 async function getFact() {
-    let res = await fetch(url);
-    let data = await res.json();
-    console.log(data.fact);
-    
+    try{
+
+        let res = await fetch(urll);
+        let data = await res.json();
+        console.log(data.fact);
+    }
+    catch(e){
+        console.log("Error aa gya :- " ,e)
+
+    }
 }
