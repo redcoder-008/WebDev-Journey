@@ -40,3 +40,6 @@ async function demoo() {
 }
 //went home  not coded today anything on js
 
+let json = '{"fact":"Many cats love having their forehead gently stroked.","length":52}';
+let validres = JSON.parse(json);
+h1.innerText=  validres.fact;
