@@ -52,10 +52,11 @@ let url = "http://universities.hipolabs.com/search?name=";
 async function getColleges(country) {
     try{
         let res = await axios.get(url + country);
-        console.log(res);
+        return (res.data);
     }
     catch(e){
         console.log("Opps!! Error aa gya :",e)
+        return [];
     }
     
 }
@@ -65,6 +66,7 @@ btn = document.querySelector("button");
 btn.addEventListener("click",async ()=>{
     let country = document.querySelector("input").value;
    console.log(country);
-    getColleges(country);
+   let colArr=await  getColleges(country);
+   console.log(colArr);
 
 })
