@@ -60,3 +60,11 @@ async function getColleges() {
     }
     
 }
+
+input  = document.querySelector("input");
+btn = document.querySelector("button");
+btn.addEventListener("click",async ()=>{
+   console.log("helloe");
+  await  getColleges();
+
+})
