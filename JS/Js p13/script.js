@@ -25,24 +25,38 @@
 //     p.innerText = fact;
 // })
 
-let url2 = "https://dog.ceo/api/breeds/image/random";
-btn = document.querySelector("Button");
-img = document.querySelector("#result");
+// let url2 = "https://dog.ceo/api/breeds/image/random";
+// btn = document.querySelector("Button");
+// img = document.querySelector("#result");
 
-async function getimage() {
-    try {
-        let res = await axios.get(url2);
-        return (res.data.message);
-    }
-    catch (e) {
-        console.log("Error aa gya - ", e);
-    }
+// async function getimage() {
+//     try {
+//         let res = await axios.get(url2);
+//         return (res.data.message);
+//     }
+//     catch (e) {
+//         console.log("Error aa gya - ", e);
+//     }
 
 
-}
-btn.addEventListener("click", async () => {
-    let link = await getimage();
-    console.log(link);
-    img.setAttribute("src", link);
-}) 
+// }
+// btn.addEventListener("click", async () => {
+//     let link = await getimage();
+//     console.log(link);
+//     img.setAttribute("src", link);
+// }) 
 //this generates new image of dogs after clicking on generate image 
+
+//list of colleges according to country name;
+let url = "http://universities.hipolabs.com/search?name=";
+let country = "nepal";
+async function getColleges() {
+    try{
+        let res = await axios.get(url + country);
+        console.log(res);
+    }
+    catch(e){
+        console.log("Opps!! Error aa gya :",e)
+    }
+    
+}
