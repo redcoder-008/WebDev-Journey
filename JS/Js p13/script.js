@@ -68,5 +68,15 @@ btn.addEventListener("click",async ()=>{
    console.log(country);
    let colArr=await  getColleges(country);
    console.log(colArr);
+   showClg(colArr);
 
 })
+function showClg (colArr){
+    let list = document.querySelector("#list");
+    for(clz of colArr){
+        let li= document.createElement("li");
+        li.innerText = clz.name;
+        list.appendChild(li);
+    }
+
+}
