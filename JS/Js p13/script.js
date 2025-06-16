@@ -49,8 +49,7 @@
 
 //list of colleges according to country name;
 let url = "http://universities.hipolabs.com/search?name=";
-let country = "nepal";
-async function getColleges() {
+async function getColleges(country) {
     try{
         let res = await axios.get(url + country);
         console.log(res);
@@ -64,7 +63,8 @@ async function getColleges() {
 input  = document.querySelector("input");
 btn = document.querySelector("button");
 btn.addEventListener("click",async ()=>{
-   console.log("helloe");
-  await  getColleges();
+    let country = document.querySelector("input").value;
+   console.log(country);
+    getColleges(country);
 
 })
