@@ -82,3 +82,4 @@ function showClg (colArr){
 }
 //part 13 completed
  //axios , sending header with api rerquest,activity using query string
+ 
