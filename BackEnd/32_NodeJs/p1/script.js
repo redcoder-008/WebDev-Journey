@@ -6,5 +6,5 @@
 // //      console.log("Welcome to my world dear ",args[i]);
 // //  }
  const math = require("./math");
- console.log(math.pi);
+ console.log(math.area(3));
  

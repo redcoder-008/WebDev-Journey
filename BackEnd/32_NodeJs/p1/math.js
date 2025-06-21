@@ -1,3 +1,4 @@
+module.exports.area = r=> r*4;
 const sum =(a,b)=> a+b;
 const mul =(a,b)=> a*b;
 const pi= 3.14;
@@ -6,6 +7,6 @@ let obj ={
     sum:sum,
     mul:mul,
     pi:pi,
-    g:g,
+    g:g
 }
 module.exports= obj;
