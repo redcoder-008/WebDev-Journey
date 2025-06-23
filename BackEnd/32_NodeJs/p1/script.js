@@ -11,3 +11,4 @@
 //  console.log(fruits);
 import {sum,mul} from "./math.js";
 console.log(sum(1,2));
+console.log(mul(2,3));
