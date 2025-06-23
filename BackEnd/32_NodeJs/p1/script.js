@@ -7,5 +7,6 @@
 // // //  }
 //  const math = require("./math");
 //  console.log(require.g);
- const fruits = require("../Fruits");
- console.log(fruits);
+//  const fruits = require("../Fruits");
+//  console.log(fruits);
+import {sum,mul} from "./math.js";
