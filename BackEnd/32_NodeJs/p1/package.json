@@ -1,0 +1,12 @@
+{
+  "name": "karan",
+  "version": "1.0.0",
+  "description": "import-export",
+  "main": "math.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Karan Kumar Kamat",
+  "license": "ISC",
+  "type" : "module"
+}

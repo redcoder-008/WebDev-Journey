@@ -10,3 +10,4 @@
 //  const fruits = require("../Fruits");
 //  console.log(fruits);
 import {sum,mul} from "./math.js";
+console.log(sum(1,2));
