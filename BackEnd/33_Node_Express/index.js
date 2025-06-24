@@ -24,6 +24,6 @@ app.get("/apple",(req,res)=>{
 app.get("/banana",(req,res)=>{
     res.send("banana is yellow in color");
 });
-app.get("*",(req,res)=>{
-    res.send("Sahi location choose kar le");
-});
+// app.get("*",(req,res)=>{
+//     res.send("Sahi location choose kar le");
+// });
