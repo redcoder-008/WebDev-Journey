@@ -27,3 +27,9 @@ app.get("/banana",(req,res)=>{
 // app.get("*",(req,res)=>{
 //     res.send("Sahi location choose kar le");
 // });
+
+app.get("/:username/:id", (req,res)=>{
+    let {username,id}= (req.params);
+    res.send(`welcome @${username}`);
+
+});
