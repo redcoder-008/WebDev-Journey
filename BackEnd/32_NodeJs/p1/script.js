@@ -12,3 +12,4 @@
 import {sum,mul} from "./math.js";
 console.log(sum(1,2));
 console.log(mul(2,3));
+//node js, installing/making packages,import modules
