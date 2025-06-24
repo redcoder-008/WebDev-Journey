@@ -28,8 +28,25 @@ app.get("/banana",(req,res)=>{
 //     res.send("Sahi location choose kar le");
 // });
 
+
+//   topic:- path parameter
 app.get("/:username/:id", (req,res)=>{
     let {username,id}= (req.params);
     res.send(`welcome @${username}`);
 
+
 });
+
+
+//query string
+app.get("/search",(req,res)=>{
+    let {q}= req.query;
+    if(!q){
+        res.send("<h1>Nothing searched</h1>");
+    }
+    res.send(`<h1> Request send for ${q}</h1>`);
+})
+
+
+// About express, handling request,routing,queryString
+
