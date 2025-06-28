@@ -20,5 +20,6 @@ app.set("views", path.join(__dirname,"/views")); //can run file from parent fold
  })
 
 app.get("/rolldice",(req,res)=>{
-   res.render("rolldice.ejs");
+   let diceVal = Math.floor(Math.random()*7);
+   res.render("rolldice.ejs",{diceVal});
 })
