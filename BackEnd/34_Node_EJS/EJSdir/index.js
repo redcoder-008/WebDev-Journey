@@ -19,3 +19,6 @@ app.set("views", path.join(__dirname,"/views")); //can run file from parent fold
 
  })
 
+app.get("/rolldice",(req,res)=>{
+   res.render("rolldice.ejs");
+})
