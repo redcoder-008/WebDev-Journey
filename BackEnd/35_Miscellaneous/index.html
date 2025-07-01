@@ -6,11 +6,19 @@
     <title>Get and Post </title>
 </head>
 <body>
-    <form action="/request" method="get">
-        <input type="text"placeholder="Enter your name " name="user" type="text">
-        <input type="text"placeholder="Enter your Password" name="password" type="password">
-        <button>Submit</button>
-    </form>
-    
+<h3>Get request form</h3>
+<form method="get" action="http://localhost:8080/register">
+    <input type="text" name="user" id="user">
+    <input type="text" name="password" id="pass">
+    <!-- <input type="text" name="user" id="user"> -->
+     <button>SUbmmit</button>
+</form>
+<h3>Post request form</h3>
+<form method="post" action="http://localhost:8080/register">
+    <input type="text" name="user" id="user">
+    <input type="text" name="password" id="pass">
+    <!-- <input type="text" name="user" id="user"> -->
+     <button>SUbmmit</button>
+</form>
 </body>
 </html>

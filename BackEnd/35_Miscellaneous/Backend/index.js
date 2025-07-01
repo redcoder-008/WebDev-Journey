@@ -5,11 +5,14 @@
  app.listen(port,()=>{
     console.log(`Listening on port ${port}`);
  })
-
+app.use(express.urlencoded({extended:true}));
  app.get("/register" , (req,res)=>{
-    res.send("Standard GET response");
+    let {user,password} = req.query;
+    res.send(`Standard GET response. Welcome ${user}!`);
  })
  app.post("/register" , (req,res)=>{
-    res.send("Standard POST response");
+    let {user,pass} = req.body;
+
+    res.send(`Standard POST response. Welcome MR ${user}`);
  })
 
