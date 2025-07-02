@@ -1,3 +1,5 @@
+
+//factory function
 function PersonMaker(name,age){
     const person ={
         name: name,
