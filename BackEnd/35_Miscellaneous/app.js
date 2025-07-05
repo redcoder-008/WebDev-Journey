@@ -65,3 +65,4 @@ let d1= new Dog("Tommy");
 
 // Get,post request, revisiting js 00-s, object prototype,factory function , class and Inheritance in js
 // Get,post request, revisiting js 00-s, object prototype,factory function , class and Inheritance in js
+// Get,post request, revisiting js 00-s, object prototype,factory function , class and Inheritance in js
