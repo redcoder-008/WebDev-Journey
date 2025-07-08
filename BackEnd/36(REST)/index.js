@@ -14,3 +14,4 @@ app.listen(port, ()=>{
 app.get("/",(req,res)=>{
     res.send("Port is working");
 })
+// rest api
