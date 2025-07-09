@@ -28,4 +28,14 @@ app.get("/posts",(req,res)=>{
 
 })
 // rest api
+app.get("/posts/new",(req,res)=>{
+    res.render("new.ejs");
+})
+
+app.post("/posts",(req,res)=>{
+    console.log("working (request received)");
+    const{username,content} = req.body;
+    posts.push({username,content});
+    res.send("Working");
+})
 
