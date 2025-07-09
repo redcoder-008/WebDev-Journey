@@ -39,3 +39,4 @@ app.post("/posts",(req,res)=>{
     res.send("Working");
 })
 
+//index route, create new route.
