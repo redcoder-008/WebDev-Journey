@@ -5,6 +5,7 @@ const port =8080;
 let posts = [
 
     {
+        id="1a",
         username:"redcoder",
         content: "I am 5star coder"
     },
@@ -29,14 +30,22 @@ app.get("/posts",(req,res)=>{
 })
 // rest api
 app.get("/posts/new",(req,res)=>{
+
     res.render("new.ejs");
+    
 })
 
 app.post("/posts",(req,res)=>{
     console.log("working (request received)");
     const{username,content} = req.body;
     posts.push({username,content});
+    
+    res.redirect("/posts");
+
+})
+app.get("/posts/id",(req,res)=>{
+    const {id} = req.params;
+    console.log({id});
     res.send("Working");
 })
-
 //index route, create new route.
