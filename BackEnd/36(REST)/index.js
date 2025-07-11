@@ -49,3 +49,9 @@ app.get("/posts/id",(req,res)=>{
     res.send("Working");
 })
 //index route, create new route.
+// 📅 Day 46/100 – #100DaysOfCode
+// ✅ Solved LeetCode #316 – Remove Duplicate Letters
+// 💡 Learned about creating unique IDs and setting up the update route in Express.js — CRUD operations are starting to click!
+// 🧩 Every concept adds to the bigger picture. One step closer to full-stack confidence!
+
+// #100DaysOfCode #LeetCode #ExpressJS #JavaScript #WebDevelopment #CRUD #RESTAPI #BackendDev #CodingJourney #Consistency
