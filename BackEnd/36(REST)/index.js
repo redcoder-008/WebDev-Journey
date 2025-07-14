@@ -5,7 +5,7 @@ const port =8080;
 let posts = [
 
     {
-        id="1a",
+        id:"1a",
         username:"redcoder",
         content: "I am 5star coder"
     },
