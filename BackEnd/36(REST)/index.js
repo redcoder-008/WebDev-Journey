@@ -7,11 +7,11 @@ const { v4: uuidv4 } = require('uuid');
 let posts = [
 
     {
-        id:"1a",
+        id:uuidv4(),
         username:"redcoder",
         content: "I am 5star coder"
     },
-    {   id:"2a",
+    {   id:uuidv4(),
         username:"Karan",
         content:"I am a senior software engineer"
     }
