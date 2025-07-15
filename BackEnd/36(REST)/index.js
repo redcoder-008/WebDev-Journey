@@ -62,12 +62,14 @@ let post = posts.find((p)=> id ===p.id);
 res.render("edit.ejs",{post});
 })
 app.patch("/posts/:id",(req,res)=>{
-let {id}= req.params;
-let post = posts.find((p)=> id === p.id);
-let newContent = req.body.content;
-post.content = newContent;
-res.send("hurray it's working");
-res.redirect("/posts");
+    let {id}= req.params;
+    let newContent = req.body.content;
+    let post = posts.find((p)=> id === p.id);
+    post.content = newContent;
+    console.log(post);
+    res.redirect("/posts");
+    // res.send("hurray it's working");
+
 
 
 });
