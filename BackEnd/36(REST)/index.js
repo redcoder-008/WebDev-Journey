@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const port =8080;
+const { v4: uuidv4 } = require('uuid');
+
 let posts = [
 
     {
@@ -38,7 +40,8 @@ app.get("/posts/new",(req,res)=>{
 app.post("/posts",(req,res)=>{
     console.log("working (request received)");
     const{username,content} = req.body;
-    posts.push({username,content});
+    let id = uuidv4();
+    posts.push({id,username,content});
     
     res.redirect("/posts");
 
