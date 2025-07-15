@@ -9,7 +9,7 @@ let posts = [
         username:"redcoder",
         content: "I am 5star coder"
     },
-    {
+    {   id:"2a",
         username:"Karan",
         content:"I am a senior software engineer"
     }
@@ -43,18 +43,10 @@ app.post("/posts",(req,res)=>{
     res.redirect("/posts");
 
 })
-app.get("/posts/id",(req,res)=>{
+app.get("/posts/:id",(req,res)=>{
     const {id} = req.params;
     console.log({id});
-    res.send("Working");
+    // res.send("Working");
+    let post = posts.find((p)=> id ===p.id);
+    res.render("show.ejs",{post});
 })
-//index route, create new route.
-// 📅 Day 46/100 – #100DaysOfCode
-// ✅ Solved LeetCode #316 – Remove Duplicate Letters
-// 💡 Learned about creating unique IDs and setting up the update route in Express.js — CRUD operations are starting to click!
-// 🧩 Every concept adds to the bigger picture. One step closer to full-stack confidence!
-
-// #100DaysOfCode #LeetCode #ExpressJS #JavaScript #WebDevelopment #CRUD #RESTAPI #BackendDev #CodingJourney #Consistency
-// #100DaysOfCode #LeetCode #ExpressJS #JavaScript #WebDevelopment #CRUD #RESTAPI #BackendDev #CodingJourney #Consistency
-// #100DaysOfCode #LeetCode #ExpressJS #JavaScript #WebDevelopment #CRUD #RESTAPI #BackendDev #CodingJourney #Consistency
-// #100DaysOfCode #LeetCode #ExpressJS #JavaScript #WebDevelopment #CRUD #RESTAPI #BackendDev #CodingJourney #Consistency
