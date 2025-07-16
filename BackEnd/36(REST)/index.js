@@ -70,6 +70,15 @@ app.patch("/posts/:id",(req,res)=>{
     res.redirect("/posts");
     // res.send("hurray it's working");
 
+});
+app.delete("/posts/:id",(req,res)=>{
+    let {id}= req.params;
+     posts = posts.filter((p)=> id != p.id);
+    res.redirect("/posts");
+
+    res.send("Working");
 
 
 });
+
+
