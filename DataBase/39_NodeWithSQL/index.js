@@ -65,10 +65,10 @@ app.get("/", (req, res) => {
 app.get("/user",(req,res)=>{
   let q= 'SELECT *from user';
   try{
-    connection.query(q,(err,result)=>{
+    connection.query(q,(err,users)=>{
       if(err) throw err;
-      res.send("data printed");
-      console.log(result);
+      res.render("showusers.ejs",{users});
+      // console.log(result);
     })
   }catch(err){
     console.log(err);
