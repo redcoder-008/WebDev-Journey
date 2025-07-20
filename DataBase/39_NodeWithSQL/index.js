@@ -49,7 +49,7 @@ app.listen("8080", () => {
 
 app.get("/", (req, res) => {
   // res.send("welcome to home page");
-  let q = 'select count(*) from user';
+  let q = `select count(*) from user`;
   try {
     connection.query(q, (err, result) => {
       if (err) throw err;
@@ -62,22 +62,42 @@ app.get("/", (req, res) => {
   }
 });
 4
-app.get("/user",(req,res)=>{
-  let q= 'SELECT *from user';
-  try{
-    connection.query(q,(err,users)=>{
-      if(err) throw err;
-      res.render("showusers.ejs",{users});
+app.get("/user", (req, res) => {
+  let q = `SELECT *from user`;
+  try {
+    connection.query(q, (err, users) => {
+      if (err) throw err;
+      res.render("showusers.ejs", { users });
       // console.log(result);
     })
-  }catch(err){
+  } catch (err) {
     console.log(err);
     res.send("some mistake");
   }
 })
-app.get("/user/id/edit",(req,res)=>{
-  res.send("welcome to edit page");
-})
+//edit route
+app.get("/user/:id/edit", (req, res) => {
+  let id = req.params.id.trim();
+  // id= id.trim();
+  console.log(id);
+  let q = `select * from user where id='${id}'`;
+  try {
+    connection.query(q, (err, ans) => {
+      console.log("Running query:", q, "with ID:", id);
+
+      if (err) throw err;
+      console.log(ans);
+      res.render("edit.ejs");
+
+
+    });
+  } catch (err) {
+    res.send("Some mistake");
+
+  }
+
+  // res.send("welcome to edit page");
+});
 
 
 
