@@ -75,6 +75,9 @@ app.get("/user",(req,res)=>{
     res.send("some mistake");
   }
 })
+app.get("/user/id/edit",(req,res)=>{
+  res.send("welcome to edit page");
+})
 
 
 
