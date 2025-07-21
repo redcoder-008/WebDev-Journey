@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hello @<%=user.username%> You are About to delete this.
+    <br>
+    <h3>Email <%= user.email %></h3>
+    <h3>Password <%= user.password %></h3>
+    <form action="/user/<%=user.id %>?_method=PATCH" method="post">
+
+        <input type="email" name="email" id="email" placeholder="Enter Email">
+        <input type="password" name="password" id="password" placeholder="Enter Password ">
+        <button>Delete Permanently</button>
+    </form>
+    
+</body>
+</html>

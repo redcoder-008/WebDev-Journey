@@ -64,7 +64,7 @@ app.get("/", (req, res) => {
     res.send("Some error in DB");
   }
 });
-4
+//display all user
 app.get("/user", (req, res) => {
   let q = `SELECT *from user`;
   try {
@@ -101,42 +101,133 @@ app.get("/user/:id/edit", (req, res) => {
 
   // res.send("welcome to edit page");
 });
-//UPDATE ROUTE
-app.patch("/user/:id", (req, res) => {
-  // res.send("congrats its working");
-  let { id } = req.params;
-  let q = `SELECT *FROM USER WHERE ID='${id}'`;
-  let { password: formPass, username: newUsername } = req.body;
-  console.log(q);
+// //UPDATE ROUTE
+// app.patch("/user/:id", (req, res) => {
+//   // res.send("congrats its working");
+//   let { id } = req.params;
+//   let q = `SELECT *FROM USER WHERE ID='${id}'`;
+//   let { password: formPass, username: newUsername } = req.body;
+//   // console.log(q);
+//   try {
+//     connection.query(q, (err, result) => {
+//       console.log(result);
+//       let user = result[0];
+//       if (formPass != user.password) {
+//         res.send("Wrong Password");
+
+//       } else {
+//         let q2 = `update user SET username='${newUsername}' where id='${id}'`;
+//         try {
+//             connection.query(q2, (err, result) => {
+//             if (err) throw err;
+//             res.redirect("/user");
+//             // res.send("update completed");
+//           });
+
+//         } catch (err) {
+//           res.send("Some mistake in Updation")
+//         }
+
+//       }
+
+//       // res.send(user);
+
+//     })
+
+//   } catch (err) {
+//     res.send("Some Mistake");
+//   }
+
+// });
+
+app.get("/user/addUser", (req, res) => {
+  res.render("addUser.ejs");
+
+
+});
+app.post("/user/addNewUser", (req, res) => {
+  // res.send("apna data daliye");
+  let { id: newId, username: newUsername, email: newEmail, password: newPassword } = req.body;
+  console.log({ newId });
+  let q3 = `insert into user (id,username,email,password) values(?,?,?,?)`;
+  console.log("Avi ka Query", q3);
   try {
-    connection.query(q, (err, result) => {
-      console.log(result);
+    connection.query(q3, [newId, newUsername, newEmail, newPassword], (err, result) => {
+      if (err) throw err;
+      res.redirect("/user");
+    });
+
+
+
+  } catch (err) {
+
+    res.send("OPPS!! Some mistake", err);
+
+
+  }
+
+
+
+
+
+});
+
+//  let { password: formPass, username: newUsername } = req.body;
+app.get("/user/:id/delete", (req, res) => {
+  let { id } = req.params;
+
+  let q5 = `select *from user where id='${id}'`;
+  console.log(q5);
+  try {
+    connection.query(q5, (err, result) => {
       let user = result[0];
-      if (formPass != user.password) {
-        res.send("Wrong Password");
+      console.log(result);
+      res.render("delete.ejs", { user });
+      // res.send("sahi jaa rhe ho");
 
+
+    });
+
+  } catch (err) {
+
+    res.send("kuch garbad baa");
+  }
+
+
+});
+
+app.patch("/user/:id", (req, res) => {
+  // res.send("good babu");
+  let { id } = req.params;
+  let select = `select *from user where id='${id}'`;
+  console.log(select);
+  let { email: formEmail, password: formPassword } = req.body;
+  try {
+    connection.query(select, (err, result) => {
+      let user = result[0];
+      console.log(user);
+      if ((formEmail != user.email) || (formPassword != user.password)) {
+        res.send("Please Check Username & Password")
       } else {
-        let q2 = `update user SET username='${newUsername}' where id='${id}'`;
+        let deleteq = `delete from user where id='${id}'`;
         try {
-
-          connection.query(q2, (err, result) => {
+          connection.query(deleteq, (err, result) => {
             if (err) throw err;
             res.redirect("/user");
-            // res.send("update completed");
           });
 
         } catch (err) {
-          res.send("Some mistake in Updation")
+          res.send("Query ya kahi garbad hai")
         }
 
       }
 
-      // res.send(user);
-
     })
 
-  } catch (err) {
-    res.send("Some Mistake");
+
+  }
+  catch (err) {
+    res.send("Kuch gadbad ba viru");
   }
 
 });
