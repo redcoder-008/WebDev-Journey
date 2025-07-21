@@ -6,7 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome to edit page</h1>
+    <h1>Welcome to edit page @<%= info.username%> password: <%= info.password%></h1>
+    <form method="post" action="/user/<%=info.id%>">
+        <textarea name="username" id="username" ><%=info.username%></textarea>
+        <input type="password"name="password" placeholder="Enter Password">
+        <button>Save Info</button>
+
+
+    </form>
     
 </body>
 </html>

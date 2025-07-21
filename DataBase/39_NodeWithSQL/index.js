@@ -86,8 +86,8 @@ app.get("/user/:id/edit", (req, res) => {
       console.log("Running query:", q, "with ID:", id);
 
       if (err) throw err;
-      console.log(ans);
-      res.render("edit.ejs");
+      let info = (ans[0]);
+      res.render("edit.ejs",{info});
 
 
     });
