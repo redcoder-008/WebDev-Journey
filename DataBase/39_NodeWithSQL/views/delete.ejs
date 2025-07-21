@@ -10,7 +10,7 @@
     <br>
     <h3>Email <%= user.email %></h3>
     <h3>Password <%= user.password %></h3>
-    <form action="/user/<%=user.id %>?_method=PATCH" method="post">
+    <form action="/user/<%=user.id %>/delete?_method=PATCH" method="post">
 
         <input type="email" name="email" id="email" placeholder="Enter Email">
         <input type="password" name="password" id="password" placeholder="Enter Password ">

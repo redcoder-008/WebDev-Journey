@@ -102,43 +102,46 @@ app.get("/user/:id/edit", (req, res) => {
   // res.send("welcome to edit page");
 });
 // //UPDATE ROUTE
-// app.patch("/user/:id", (req, res) => {
-//   // res.send("congrats its working");
-//   let { id } = req.params;
-//   let q = `SELECT *FROM USER WHERE ID='${id}'`;
-//   let { password: formPass, username: newUsername } = req.body;
-//   // console.log(q);
-//   try {
-//     connection.query(q, (err, result) => {
-//       console.log(result);
-//       let user = result[0];
-//       if (formPass != user.password) {
-//         res.send("Wrong Password");
+app.patch("/user/:id", (req, res) => {
+  // res.send("congrats its working");
+  let { id } = req.params;
 
-//       } else {
-//         let q2 = `update user SET username='${newUsername}' where id='${id}'`;
-//         try {
-//             connection.query(q2, (err, result) => {
-//             if (err) throw err;
-//             res.redirect("/user");
-//             // res.send("update completed");
-//           });
+  let q = `SELECT *FROM USER WHERE ID='${id}'`;
+  let { password: formPass, username: newUsername } = req.body;
+  // console.log(q);
+  try {
+    connection.query(q, (err, result) => {
+      console.log(result);
+      let user = result[0];
+      if (formPass != user.password) {
+        res.send("Wrong Password");
 
-//         } catch (err) {
-//           res.send("Some mistake in Updation")
-//         }
+      } else {
+        let q2 = `update user SET username='${newUsername}' where id='${id}'`;
+        try {
+          connection.query(q2, (err, result) => {
 
-//       }
+            if (err) throw err;
+            res.redirect("/user");
+            // res.send("update completed");
+          });
 
-//       // res.send(user);
+        } catch (err) {
+          res.send("Some mistake in Updation")
+        }
 
-//     })
+      }
 
-//   } catch (err) {
-//     res.send("Some Mistake");
-//   }
 
-// });
+      // res.send(user);
+
+    })
+
+  } catch (err) {
+    res.send("Some Mistake");
+  }
+
+});
 
 app.get("/user/addUser", (req, res) => {
   res.render("addUser.ejs");
@@ -196,10 +199,11 @@ app.get("/user/:id/delete", (req, res) => {
 
 });
 
-app.patch("/user/:id", (req, res) => {
+app.patch("/user/:id/delete", (req, res) => {
   // res.send("good babu");
   let { id } = req.params;
   let select = `select *from user where id='${id}'`;
+
   console.log(select);
   let { email: formEmail, password: formPassword } = req.body;
   try {
