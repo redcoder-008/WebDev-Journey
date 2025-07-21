@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Welcome to edit page @<%= info.username%> password: <%= info.password%></h1>
-    <form method="post" action="/user/<%=info.id%>">
+    <form method="post" action="/user/<%=info.id%>?_method=PATCH">
         <textarea name="username" id="username" ><%=info.username%></textarea>
         <input type="password"name="password" placeholder="Enter Password">
         <button>Save Info</button>

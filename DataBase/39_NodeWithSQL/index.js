@@ -3,6 +3,7 @@ const mysql = require('mysql2');
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require("method-override");
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -10,6 +11,8 @@ const connection = mysql.createConnection({
   password: 'karan@mysql',
   port: 3307
 });
+app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 let getRandomUser = () => {
@@ -87,7 +90,7 @@ app.get("/user/:id/edit", (req, res) => {
 
       if (err) throw err;
       let info = (ans[0]);
-      res.render("edit.ejs",{info});
+      res.render("edit.ejs", { info });
 
 
     });
@@ -97,6 +100,45 @@ app.get("/user/:id/edit", (req, res) => {
   }
 
   // res.send("welcome to edit page");
+});
+//UPDATE ROUTE
+app.patch("/user/:id", (req, res) => {
+  // res.send("congrats its working");
+  let { id } = req.params;
+  let q = `SELECT *FROM USER WHERE ID='${id}'`;
+  let { password: formPass, username: newUsername } = req.body;
+  console.log(q);
+  try {
+    connection.query(q, (err, result) => {
+      console.log(result);
+      let user = result[0];
+      if (formPass != user.password) {
+        res.send("Wrong Password");
+
+      } else {
+        let q2 = `update user SET username='${newUsername}' where id='${id}'`;
+        try {
+
+          connection.query(q2, (err, result) => {
+            if (err) throw err;
+            res.redirect("/user");
+            // res.send("update completed");
+          });
+
+        } catch (err) {
+          res.send("Some mistake in Updation")
+        }
+
+      }
+
+      // res.send(user);
+
+    })
+
+  } catch (err) {
+    res.send("Some Mistake");
+  }
+
 });
 
 
