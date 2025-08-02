@@ -30,19 +30,19 @@ user2.save().then((res)=>{
   console.log(err);
 
 });
- User.insertMany([
-  {name:"kum",email:"sample@gmaail.com",age:21},
-  { name:"Kumar",email:"Kumar@gmail.com",age:30},
-  {name:"Kamat",email:"Kamat@gmail.com",age:23}
- ]).then((res)=>{
-  console.log(res);
- }).catch((err)=>{
-  console.log(err);
- });
 
 
- */
+*/
 
+User.insertMany([
+ {name:"kum",email:"sample@gmaail.com",age:21},
+ { name:"Kumar",email:"Kumar@gmail.com",age:30},
+ {name:"Kamat",email:"Kamat@gmail.com",age:23}
+]).then((res)=>{
+ console.log(res);
+}).catch((err)=>{
+ console.log(err);
+});
  //find in database
 
 // User.find({age:{$gt:20}}).then((res)=>{
@@ -83,7 +83,7 @@ User.updateMany({age:{$gt:15}},{age:25}).then((res)=>{
 //findandUpdate
 User.findOneAndUpdate({name:"kum"},{age:4},{new:true}).then((res)=>{
   console.log("Result was displayed and updated");
-  console.log(res);
+  // console.log(res);
 
 }).catch((err)=>{
   console.log(err);
@@ -96,3 +96,18 @@ User.findByIdAndUpdate({_id:"688ce9701ea0436c9b3718d7"},{age:22},{new:true}).the
 }).catch((err)=>{
   console.log("Some Mistake");
 })
+
+//delete
+User.deleteOne({name:""}).then((res)=>{
+  // console.log(res);
+  console.log("deleted One Successfully");
+}).catch((err)=>{
+  console.log("Delete one me koi mistake hai");
+});
+//delete many 
+User.deleteMany({name:"Kamat"}).then((res)=>{
+  console.log(res);
+  console.log("deleted Many Successfully");
+}).catch((err)=>{
+  console.log("Delete one me koi mistake hai");
+});
