@@ -61,7 +61,8 @@ user2.save().then((res)=>{
 
 //find by id
 User.findById("688ce9701ea0436c9b3718d7").then((res)=>{
-  console.log(res);
+  // console.log(res);
+  console.log("findBYId")
 }).catch((err)=>{
   console.log("kuch garbad hai");
 })
@@ -80,8 +81,18 @@ User.updateMany({age:{$gt:15}},{age:25}).then((res)=>{
 });
 
 //findandUpdate
-User.findOneAndUpdate({name:"kum"},{age:2}).then((res)=>{
+User.findOneAndUpdate({name:"kum"},{age:4},{new:true}).then((res)=>{
   console.log("Result was displayed and updated");
+  console.log(res);
+
 }).catch((err)=>{
   console.log(err);
 });
+
+//find and update by id
+User.findByIdAndUpdate({_id:"688ce9701ea0436c9b3718d7"},{age:22},{new:true}).then((res)=>{
+  // console.log(res);
+  console.log("find by id and update is working")
+}).catch((err)=>{
+  console.log("Some Mistake");
+})
