@@ -68,13 +68,20 @@ User.findById("688ce9701ea0436c9b3718d7").then((res)=>{
 
 //update one
 User.updateOne({name:"kum"},{email:"updated@gmail.com"}).then((res)=>{
-  console.log(res);
+  console.log("Update One");
 }).catch((err)=>{
   console.log(err);
 });
 //update many
 User.updateMany({age:{$gt:15}},{age:25}).then((res)=>{
-  console.log("Update completed");
+  console.log("UpdateMany completed");
 }).catch((err)=>{
   console.log("Some error");
+});
+
+//findandUpdate
+User.findOneAndUpdate({name:"kum"},{age:2}).then((res)=>{
+  console.log("Result was displayed and updated");
+}).catch((err)=>{
+  console.log(err);
 });
