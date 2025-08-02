@@ -44,8 +44,37 @@ user2.save().then((res)=>{
  */
 
  //find in database
-User.find({age:{$gt:20}}).then((res)=>{
+
+// User.find({age:{$gt:20}}).then((res)=>{
+//   console.log(res);
+// }).catch((err)=>{
+//   console.log(res);
+// });
+
+
+// //find one in DB
+// User.findOne({age:{$gt:20}}).then((res)=>{
+//   console.log(res);
+// }).catch((err)=>{
+//   console.log(res);
+// });
+
+//find by id
+User.findById("688ce9701ea0436c9b3718d7").then((res)=>{
   console.log(res);
 }).catch((err)=>{
+  console.log("kuch garbad hai");
+})
+
+//update one
+User.updateOne({name:"kum"},{email:"updated@gmail.com"}).then((res)=>{
   console.log(res);
+}).catch((err)=>{
+  console.log(err);
+});
+//update many
+User.updateMany({age:{$gt:15}},{age:25}).then((res)=>{
+  console.log("Update completed");
+}).catch((err)=>{
+  console.log("Some error");
 });
