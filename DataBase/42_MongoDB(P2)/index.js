@@ -32,8 +32,6 @@ user2.save().then((res)=>{
 });
 
 
-*/
-
 User.insertMany([
  {name:"kum",email:"sample@gmaail.com",age:21},
  { name:"Kumar",email:"Kumar@gmail.com",age:30},
@@ -43,6 +41,8 @@ User.insertMany([
 }).catch((err)=>{
  console.log(err);
 });
+*/
+
  //find in database
 
 // User.find({age:{$gt:20}}).then((res)=>{
@@ -60,6 +60,7 @@ User.insertMany([
 // });
 
 //find by id
+/*
 User.findById("688ce9701ea0436c9b3718d7").then((res)=>{
   // console.log(res);
   console.log("findBYId")
@@ -97,7 +98,10 @@ User.findByIdAndUpdate({_id:"688ce9701ea0436c9b3718d7"},{age:22},{new:true}).the
   console.log("Some Mistake");
 })
 
-//delete
+
+*/
+//delete 
+/*
 User.deleteOne({name:""}).then((res)=>{
   // console.log(res);
   console.log("deleted One Successfully");
@@ -110,4 +114,13 @@ User.deleteMany({name:"Kamat"}).then((res)=>{
   console.log("deleted Many Successfully");
 }).catch((err)=>{
   console.log("Delete one me koi mistake hai");
+});
+*/
+User.findByIdAndDelete({_id:"688da95340cc54a3c794171a"}).then((res)=>{
+  console.log(res);
+  console.log("Find by id and delete");
+
+}).catch((err)=>{
+  console.log("find by id and Delete me kuch garbad hai");
+
 });
