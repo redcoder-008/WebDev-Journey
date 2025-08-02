@@ -48,7 +48,7 @@ const kitabSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
-        min:1,
+        min:[1,"Price bohot kam hai isko badha k likho"],
     },
     discount: {
         type: Number,
@@ -60,12 +60,12 @@ const kitabSchema = new mongoose.Schema({
         enum:["fiction","non-fiction"]//category inhi mese hona chaiye
     }
 });
-let kitab = mongoose.model("kitab", kitabSchema);
+const kitab = mongoose.model("kitab", kitabSchema);
 
 let kitab1 = new kitab({
     title: "MArvel comic",
     author: "xyz",
-    price: 10,
+    price: 0,
     category:"fiction",
 });
 
@@ -73,6 +73,19 @@ kitab1.save().then((res) => {
     console.log("Data Inserted");
 }).catch((err) => {
 
-    console.log(err);
+    console.log(err.errors.price.properties.message);
     console.log("Kuch badbad hai ");
+}); 
+
+kitab.findByIdAndUpdate(
+    "688dbe3019ac9074940370ec",
+    {price:200},
+    {runValidators:true}
+
+).then((res)=>{
+    console.log(res),
+    console.log("Update success");
+}).catch((err)=>{
+    console.log("Some mistake in updation");
 });
+ 
