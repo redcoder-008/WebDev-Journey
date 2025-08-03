@@ -124,3 +124,5 @@ User.findByIdAndDelete({_id:"688da95340cc54a3c794171a"}).then((res)=>{
   console.log("find by id and Delete me kuch garbad hai");
 
 });
+
+//push
