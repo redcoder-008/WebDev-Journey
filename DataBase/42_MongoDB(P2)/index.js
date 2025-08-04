@@ -126,3 +126,4 @@ User.findByIdAndDelete({_id:"688da95340cc54a3c794171a"}).then((res)=>{
 });
 
 //push
+//pull
