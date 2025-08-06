@@ -12,12 +12,13 @@
     <% for (chat of chats){ %>
       <div class="chat">
         <p>
-            From: <%= chat.from %>
+            From:  <i><%= chat.from %>  </i>
         </p>
-        <p> <%= chat.message %></p>
-        <p><%= chat.to %> </p>
+        <p class="message"> <%= chat.message %></p>
+        <p>Received by <i> <%= chat.to %> </p> </i>
       </div>
-      <hr>
+      <br><br>
+      
 
   <% } %>
     
