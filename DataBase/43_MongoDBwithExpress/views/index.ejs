@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <Link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <h1>Chat me apka swagat hai</h1>
+    <center><h2>All chats</h2></center>
+    <% for (chat of chats){ %>
+      <div class="chat">
+        <p>
+            From: <%= chat.from %>
+        </p>
+        <p> <%= chat.message %></p>
+        <p><%= chat.to %> </p>
+      </div>
+      <hr>
+
+  <% } %>
+    
+</body>
+</html>
