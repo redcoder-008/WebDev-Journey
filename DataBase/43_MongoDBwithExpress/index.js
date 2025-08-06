@@ -4,9 +4,10 @@ const mongoose = require("mongoose");
 const path = require("path");
 const Chat = require("./models/chat.js");
 
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "views"));//to connect ejs file
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));//it shows that from where css,js file is served
+app.use(express.urlencoded({ extended: true })); //to parese data ,get from form
 
 
 main().then(() => {
@@ -26,20 +27,35 @@ app.get("/", (req, res) => {
 })
 
 
-app.get("/chats",async(req,res)=>{
- let chats =await Chat.find();
- console.log("Chat received");
- res.render("index.ejs",{chats});
+app.get("/chats", async (req, res) => {
+    let chats = await Chat.find();
+    console.log("Chat received");
+    res.render("index.ejs", { chats });
 })
 console.log("")
 
 //new chat 
-app.get("/chats/new", (req,res)=>{
+app.get("/chats/new", (req, res) => {
     // res.send("Create new chat")
     res.render("new.ejs");
 })
 
-app.post("/chats" ,(req,res)=>{
-    res.send("form")
+app.post("/chats", (req, res) => {
+    let { from, to, message } = req.body;
+    let newChat = new Chat({
+
+        from: from,
+        to: to,
+        message: message,
+        createdAt: new Date()
+    }
+    )
+    newChat.save().then((res) => {
+        console.log("chat saved");
+    }).catch((err) => {
+        console.log("Some mistake in new chat")
+    })
+    res.redirect("/chats")
+
 
 })
