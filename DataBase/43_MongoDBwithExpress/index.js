@@ -97,4 +97,5 @@ app.delete("/chats/:id", async (req, res) => {
     let { id } = req.params;
     let delchat = await Chat.findByIdAndDelete(id);
     res.redirect("/chats");
+      
 })

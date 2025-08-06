@@ -29,7 +29,8 @@
             <button>Edit</button>
         </form> <BR></BR>
         <form action="/chats/<%= chat._id%>?_method=DELETE" method="post">
-            <button>Delete</button>
+            <!-- <button onclick="confirmDelete()" >Delete</button> -->
+             <button onclick="deleteChat('64abcd1234...')">Delete</button>
 
         </form>
 
@@ -39,6 +40,28 @@
       
 
   <% } %>
+
+
+
+<script>
+  function deleteChat(chatId) {
+    if (confirm("Are you sure you want to delete this chat?")) {
+      fetch(`/chats/${chatId}`, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert(data.message);
+        // Optionally refresh or redirect
+        location.reload();
+      })
+      .catch(err => console.error(err));
+    } else {
+      alert("Deletion cancelled.");
+    }
+  }
+</script>
+
     
 </body>
 </html>
