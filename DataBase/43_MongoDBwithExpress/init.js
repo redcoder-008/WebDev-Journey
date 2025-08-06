@@ -15,6 +15,7 @@ let allChats =[
         to:"test",
         message :"test1",
         createdAt:new Date(),
+          updatedAt:Date(),
 
     },
     {
@@ -22,6 +23,7 @@ let allChats =[
         to:"kumar",
         message :"test2",
         createdAt:new Date(),
+          updatedAt:Date(),
 
     },
     {
@@ -29,6 +31,7 @@ let allChats =[
         to:"pack",
         message :"test3",
         createdAt:new Date(),
+          updatedAt:Date(),
 
     },
     {
@@ -36,6 +39,7 @@ let allChats =[
         to:"nod",
         message :"test3",
         createdAt:new Date(),
+        updatedAt: Date(),
 
     },
 

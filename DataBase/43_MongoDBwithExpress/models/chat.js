@@ -14,6 +14,9 @@
     },
     createdAt:{
         type:Date,
+    },
+    updatedAt:{
+        type:Date,
     }
  })
 
