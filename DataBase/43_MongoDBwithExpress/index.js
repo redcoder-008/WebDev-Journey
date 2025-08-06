@@ -32,3 +32,14 @@ app.get("/chats",async(req,res)=>{
  res.render("index.ejs",{chats});
 })
 console.log("")
+
+//new chat 
+app.get("/chats/new", (req,res)=>{
+    // res.send("Create new chat")
+    res.render("new.ejs");
+})
+
+app.post("/chats" ,(req,res)=>{
+    res.send("form")
+
+})
