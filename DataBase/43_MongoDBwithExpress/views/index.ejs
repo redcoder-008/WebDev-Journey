@@ -21,9 +21,10 @@
         <p>Received by <i> <%= chat.to %> </p> </i>
         <hr>
         <p> <%= chat.createdAt.toString().split(" ")[4]%></p>
+        <!-- <p> <%= chat.createdAt%></p> -->
         <p> <%= chat.createdAt.toString().split(" ").slice(0,4).join(" ") %></p>
         <hr>
-        <p><%= chat.updatedAt %></p>
+        <p> Update time<%= chat.updatedAt.toString().split(" ")[4] %></p>
         <form action="/chats/<%= chat._id %>/edit" method="get">
             <button>Edit</button>
         </form> <BR></BR>

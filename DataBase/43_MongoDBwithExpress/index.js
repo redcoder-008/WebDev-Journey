@@ -48,7 +48,8 @@ app.post("/chats", (req, res) => {
         from: from,
         to: to,
         message: message,
-        createdAt: new Date()
+        createdAt: new Date(),
+        updatedAt:new Date()
     }
     )
     newChat.save().then((res) => {
@@ -76,11 +77,20 @@ app.put("/chats/:id", async (req, res) => {
     let updatedChat = await Chat.findByIdAndUpdate(
         id,
         { message: newMessage },
+     
         { runValidators: true, new: true },
 
     );
+    let updateDate = await Chat.findByIdAndUpdate(
+        id,
+        {
+   updatedAt: new Date()},
+        
+    )
     console.log(updatedChat);
+    console.log(updateDate);
     res.redirect("/chats");
+    
 })
 //destroy route
 app.delete("/chats/:id", async (req, res) => {
