@@ -19,8 +19,13 @@
         </p>
         <p class="message"> <%= chat.message %></p>
         <p>Received by <i> <%= chat.to %> </p> </i>
+        <hr>
+        <p> <%= chat.createdAt.toString().split(" ")[4]%></p>
+        <p> <%= chat.createdAt.toString().split(" ").slice(0,4).join(" ") %></p>
+
       </div>
       <br><br>
+      <hr>
       
 
   <% } %>
