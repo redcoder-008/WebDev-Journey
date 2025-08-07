@@ -3,6 +3,12 @@ const app = express();
 const mongoose = require("mongoose");
 const ejs = require("ejs");
 const Listing = require("./models/listing.js")
+const path = require("path");
+
+app.set(express.static(path.join(__dirname,"views")));
+app.set("view engine ","ejs");
+app.use(express.urlencoded({extended:true}));
+
 app.listen(8080, () => {
     console.log("Listining on port 8080");
 });
@@ -36,6 +42,16 @@ app.get("/", (req, res) => {
 // });
 
 //index route
-app.get("/listings",(req,res)=>{
+app.get("/listings", async (req,res)=>{
+const allListings = await Listing.find({})
+res.render("Listings/index.ejs",{allListings});
+});
 
-})
+//show route 
+app.get("/listings/:id",async (req,res)=>{
+    // res.send("Welcome to each id");
+    let {id} = req.params;
+  let listing= await  Listing.findById(id)
+  res.render("Listings/show.ejs",{listing});
+   
+});
