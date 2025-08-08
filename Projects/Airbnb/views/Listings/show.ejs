@@ -6,13 +6,15 @@
     <title>WanderLust</title>
 </head>
 <body>
+
     <h3>Listing Details</h3>
     <ul>
         <li> Title:<%= listing.title %> </li>
-        <li> Description:<%= listing.Description%> </li>
+        <li> Description:<%= listing.description%> </li>
         <li> price: &#8377; <%= listing.price.toLocaleString("en-IN") %> </li>
         <li> location:<%= listing.location %> </li>
         <li> country:<%= listing.country %> </li>
     </ul>
+    <a href="/listings/<%=listing._id%>/edit">Edit This</a>
 </body>
 </html>

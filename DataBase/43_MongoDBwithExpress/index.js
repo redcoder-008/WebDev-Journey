@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 const Chat = require("./models/chat.js");
-const methodOverride = require("method-override")
+const methodOverride = require("method-override");
 
 app.set("views", path.join(__dirname, "views"));//to connect ejs file
 app.set("view engine", "ejs");
