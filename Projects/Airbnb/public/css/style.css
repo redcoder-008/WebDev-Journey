@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+.body{
+    
+
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-weight: 500 !important;
+  
+
+}
+
+.plus-jakarta-sans-.body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+
+}
 .navbar {
     height: 5rem;
     background-color: white;
@@ -63,6 +78,7 @@
     padding: 0;
 
 }
-.card-text p{
+.card-text {
     font-weight: 400;
+    /* color: red; */
 }
