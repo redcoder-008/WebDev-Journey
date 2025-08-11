@@ -5,9 +5,9 @@
             
             <% for(let listing of allListings){ %>
 
-        
-                <div class="card col" style="width: 20rem;">
-                    <img src="<%= listing.image.url%>" class="card-img-top" alt="Image of places">
+        <a href="/listings/<%=listing._id%>" class="listing-link">
+                <div class="card col">
+                    <img src="<%= listing.image.url%>" class="card-img-top" alt="Image of places" style="height:20rem">
                     <div class="card-body">
                         <p class="card-text">
                         <b>    <%= listing.title %> </b> 
@@ -15,7 +15,9 @@
                            &#8377;  <%= listing.price %>/Night
                         </p>
                     </div>
+                    <div class="card-img-overlay">ABCD</div> 
                 </div>
+                 </a>
 
                 <% } %>
         </div>
