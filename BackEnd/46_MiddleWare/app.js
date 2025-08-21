@@ -1,4 +1,12 @@
-loading
-//no code
-//happy janasatmi
-//preparation for dsa exam
+const express = require("express");
+const app = express();
+
+app.listen(8080,()=>{
+    console.log("Listening on port 8080");
+});
+
+app.get("/",(req,res)=>{
+    res.send("hello world")
+});
+
+//middleware 
