@@ -14,9 +14,12 @@ app.get("/",(req,res)=>{
 //     console.log("YOur first middleware")
 // });
 app.use((req,res)=>{
+     let {query} = req.query;
+    console.log(query);
     console.log("Middleware");
     res.send("OK");
 })
 app.get("/random",(req,res)=>{
+   
     res.send("Random page");
 })
