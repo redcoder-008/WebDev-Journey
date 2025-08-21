@@ -10,3 +10,13 @@ app.get("/",(req,res)=>{
 });
 
 //middleware 
+// app.use(()=>{
+//     console.log("YOur first middleware")
+// });
+app.use((req,res)=>{
+    console.log("Middleware");
+    res.send("OK");
+})
+app.get("/random",(req,res)=>{
+    res.send("Random page");
+})
