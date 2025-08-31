@@ -23,3 +23,4 @@ app.get("/random",(req,res)=>{
    
     res.send("Random page");
 })
+//ready to go 
