@@ -67,10 +67,15 @@ app.get("/listings/:id", async (req, res) => {
 });
 
 //create route
-app.post("/listings", async (req, res) => {
-    const newlisting = new Listing(req.body.listing);
-    await newlisting.save();
-    res.redirect("/listings");
+app.post("/listings", async (req, res,next) => {
+    try{
+
+        const newlisting = new Listing(req.body.listing);
+        await newlisting.save();
+        res.redirect("/listings");
+    }catch{
+        next(err);
+    }
 
 });
 
@@ -97,3 +102,8 @@ app.delete("/listings/:id",async(req,res)=>{
     await Listing.findByIdAndDelete(id);
     res.redirect("/listings");
 }) 
+
+app.use((err,req,res,next)=>{
+    res.send("SomeThing is wrong");
+
+})
