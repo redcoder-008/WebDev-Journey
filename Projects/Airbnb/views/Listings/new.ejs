@@ -7,21 +7,21 @@
                 <form action="/listings" method="post">
                     <div class="mb-3">
                         <label for="title" class="form-label"> Title</label>
-                        <input type="text" name="listing[title]" placeholder="Add a catchy Title" class="form-control">
+                        <input type="text" name="listing[title]" placeholder="Add a catchy Title" class="form-control" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
+                        <label for="description" class="form-label" >Description</label>
 
                         <!-- <input type="text" name="listing[description]"placeholder="Enter the description" id="" class="form-control"> -->
                         <textarea name="listing[description]" id="" class="form-control"
-                            placeholder="Enter Description "></textarea>
+                            placeholder="Enter Description " required></textarea>
                     </div>
 
                     <div class="mb-3">
                         <label for="listing[image.filename]" class="form-label">Image name</label>
                         <input type="text" name="listing[image.filename]" id="" class="form-control"
-                            placeholder="Image Name">
+                            placeholder="Image Name" >
                     </div>
 
                     <div class="mb-3">
@@ -37,7 +37,7 @@
                             <label for="listing[price]" class="form-label"> Price</label>
 
                             <input type="number" name="listing[price]" id="" placeholder="&#8377;1200"
-                                class="form-control">
+                                class="form-control"required>
                         </div>
 
                         <div class="mb-3 col-md-8">
