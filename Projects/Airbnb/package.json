@@ -10,11 +10,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-mongo": "^5.1.0",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
     "express": "^5.1.0",
+    "express-session": "^1.18.2",
     "method-override": "^3.0.0",
     "mongoose": "^8.17.0",
-    "override": "^0.0.1"
+    "override": "^0.0.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   }
 }
