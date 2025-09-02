@@ -158,38 +158,8 @@ app.post("/booking", async (req, res) => {
 
 
 //login/signup
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
-const passport = require("passport");
-const LocalStrategy = require("passport-local");
-const User = require("./models/User");
 
-// ✅ Session setup
-app.use(session({
-  secret: "yourSecretKey",
-  resave: false,
-  saveUninitialized: false,
-  store: MongoStore.create({ mongoUrl: "mongodb://127.0.0.1:27017/hotelApp" }),
-  cookie: { maxAge: 1000 * 60 * 60 * 24 } // 1 day
-}));
+const authRoutes = require("./routes/auth.js");
+app.use("/", authRoutes);
 
-// ✅ Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
-
-// ✅ Local strategy
-passport.use(new LocalStrategy(async (username, password, done) => {
-  const user = await User.findOne({ username });
-  if (!user) return done(null, false, { message: "User not found" });
-  const isValid = await user.validatePassword(password);
-  if (!isValid) return done(null, false, { message: "Invalid password" });
-  return done(null, user);
-}));
-
-// ✅ Serialize / Deserialize
-passport.serializeUser((user, done) => done(null, user.id));
-passport.deserializeUser(async (id, done) => {
-  const user = await User.findById(id);
-  done(null, user);
-});
 
