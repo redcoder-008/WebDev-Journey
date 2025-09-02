@@ -103,6 +103,7 @@
 .btn-edit{
     background-color: #fe424d !important;
     border: none !important;
+    
 }
 .head{
     color: #fe424d !important;
@@ -119,10 +120,20 @@
 }
 .del-btn{
     height: 6vh;
+    margin-left: 9rem !important;
 }
+.book-btn{
+    background-color: #D23658 !important;
 
+}
 .show-card{
     padding-left: 0;
     padding-right: 0;
 
+}
+.booked-card{
+    border: 1px solid black !important;
+    padding: 1rem;
+    margin: 1rem;
+    /* border-radius: 0.5rem; */
 }

@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const ejs = require("ejs");
 const Listing = require("./models/listing.js")
+const Booking = require("./models/booking.js"); 
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
@@ -79,6 +80,8 @@ app.post("/listings", async (req, res,next) => {
 
 });
 
+
+
 //get edit form
 app.get("/listings/:id/edit", async (req, res) => {
     let { id } = req.params;
@@ -103,7 +106,52 @@ app.delete("/listings/:id",async(req,res)=>{
     res.redirect("/listings");
 }) 
 
-app.use((err,req,res,next)=>{
-    res.send("SomeThing is wrong");
+app.get("/listings/:id/book", async (req, res) => {
+    // res.send("Booking opwn");#D23658
 
-})
+    let { id } = req.params;
+    let listing = await Listing.findById(id);
+    res.render("Listings/book.ejs", { listing });
+    // res.send("welcome")
+});
+
+// app.get("/booking", async (req,res)=>{
+//      const allBooking = await Bookings.find({})
+//     res.render("Listings/showBooking.ejs",{allBooking});
+// }); 
+
+app.get("/booking", async (req, res) => {
+  try {
+    const allBooking = await Booking.find();
+    res.render("Listings/showBooking.ejs",{allBooking});
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+
+
+app.use((err,req,res,next)=>{
+    console.log(err);
+    res.send("SomeThing is wrong",);
+
+});
+
+app.post("/booking", async (req, res) => {
+  try {
+    const {  hotelTitle,name, email, phoneNumber, date, startTime, endTime } = req.body;
+    const newBooking = new Booking({
+        hotelTitle,
+      name,
+      email,
+      phoneNumber,
+      date,
+      startTime,
+      endTime
+    });
+    await newBooking.save();
+    res.redirect("/booking"); // or wherever you want to show bookings
+  } catch (err) {
+    console.error(err);
+    res.send("Error creating booking");
+  }
+});

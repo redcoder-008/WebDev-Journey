@@ -25,10 +25,17 @@
         </div>
 
         <div class="btns mb-5">
-            <a href="/listings/<%=listing._id%>/edit" class="btn btn-dark col-1 offset-3 btn-edit">Edit </a> <br><br>
+            
+                
+
+          
+            <a href="/listings/<%=listing._id%>/book" class="btn  col-1 offset-2 btn-success ">Reserve </a> 
+            <a href="/listings/<%=listing._id%>/edit" class="btn btn-dark col-1 offset-1 btn-edit">Edit </a> 
+           
             <form action="/listings/<%=listing._id%>?_method=DELETE" method="post">
                 <button class="btn btn-dark offset-5 del-btn">DELETE</button>
             </form>
+           
 
         </div>
 
