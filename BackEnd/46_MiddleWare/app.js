@@ -29,17 +29,21 @@ app.get("/", (req, res) => {
 
 // });
 
-app.use("/api", (req, res, next) => {
+const checkToken= (req, res, next) => {
     let { token } = req.query;
     if (token == "giveaccess") {
 
-        res.send("Data");
-        console.log("Data sent");
+        // res.send("Data");
+        // console.log("Data sent");
+        next();
     } else {
         res.send("Invalid");
     }
     next();
-})
+};
+app.use("/api",checkToken,(req,res)=>{
+    res.send("You have access to data");
+});
 
 app.use("/random", (req, res, next) => {
     console.log("I am only for random");
