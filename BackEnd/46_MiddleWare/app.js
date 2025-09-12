@@ -36,10 +36,8 @@ const checkToken= (req, res, next) => {
         // res.send("Data");
         // console.log("Data sent");
         next();
-    } else {
-        res.send("Invalid");
     }
-    next();
+    throw new Error("Access Denied"); //passing own message 
 };
 app.use("/api",checkToken,(req,res)=>{
     res.send("You have access to data");
