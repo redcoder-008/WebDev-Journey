@@ -27,7 +27,10 @@
         <p> Update time<%= chat.updatedAt.toString().split(" ")[4] %></p>
         <form action="/chats/<%= chat._id %>/edit" method="get">
             <button>Edit</button>
-        </form> <BR></BR>
+        </form> <BR>
+          <form action="/chats/<%=chat._id%>" method="get">
+            <button>Show</button>
+          </form>
         <form action="/chats/<%= chat._id%>?_method=DELETE" method="post">
             <!-- <button onclick="confirmDelete()" >Delete</button> -->
              <button onclick="deleteChat('64abcd1234...')">Delete</button>

@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const Chat = require("./models/chat.js");
 const methodOverride = require("method-override");
+const ExpressError = require("./ExpressError");
 
 app.set("views", path.join(__dirname, "views"));//to connect ejs file
 app.set("view engine", "ejs");
@@ -17,10 +18,13 @@ main().then(() => {
 async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/whatsapp');
 }
+async function main() {
+    await mongoose.connect("mongodb://127.0.0.1:27017/fakewhatsapp");
+}
 
 
 app.listen(8080, () => {
-    console.log("Listening")
+    console.log("Listening on port 8080")
 });
 
 app.get("/", (req, res) => {
@@ -28,74 +32,123 @@ app.get("/", (req, res) => {
 })
 
 
-app.get("/chats", async (req, res) => {
-    let chats = await Chat.find();
-    console.log("Chat received");
-    res.render("index.ejs", { chats });
+app.get("/chats", async (req, res, next) => {
+    try {
+
+        let chats = await Chat.find();
+        console.log("Chat received");
+        res.render("index.ejs", { chats });
+    } catch (err) {
+        next(err);
+    }
 })
-console.log("")
+
 
 //new chat 
 app.get("/chats/new", (req, res) => {
     // res.send("Create new chat")
+
     res.render("new.ejs");
 })
 
-app.post("/chats", (req, res) => {
-    let { from, to, message } = req.body;
-    let newChat = new Chat({
+app.post("/chats", async (req, res, next) => {
+    try {
 
-        from: from,
-        to: to,
-        message: message,
-        createdAt: new Date(),
-        updatedAt:new Date()
+
+        let { from, to, message } = req.body;
+        let newChat = new Chat({
+
+            from: from,
+            to: to,
+            message: message,
+            createdAt: new Date(),
+            updatedAt: new Date()
+        }
+        )
+        await newChat.save();
+        // ;.then((res) => {
+        //     console.log("chat saved");
+        // }).catch((err) => {
+        //     console.log("Some mistake in new chat")
+        // })
+        res.redirect("/chats")
+    } catch (err) {
+        next(err);
     }
-    )
-    newChat.save().then((res) => {
-        console.log("chat saved");
-    }).catch((err) => {
-        console.log("Some mistake in new chat")
-    })
-    res.redirect("/chats")
+
+
 
 
 })
+//new show route
+app.get("/chats/:id", async (req, res, next) => {
+    try {
+
+        let { id } = req.params;
+        let chat = await Chat.findById(id);
+        if (!chat) {
+            next(new ExpressError(404, "Chat nai vetlo"));
+
+        }
+        res.render("edit.ejs", { chat });
+    } catch (err) {
+        next(err);
+    }
+
+});
 
 //edit route
 app.get("/chats/:id/edit", async (req, res) => {
-    let { id } = req.params;
-    let chat = await Chat.findById(id);
+    try {
+
+        let { id } = req.params;
+        let chat = await Chat.findById(id);
 
 
-    res.render("edit.ejs", { chat });
+        res.render("edit.ejs", { chat });
+    } catch {
+        next(err);
+    }
 })
 //update route
 app.put("/chats/:id", async (req, res) => {
-    let { id } = req.params;
-    let { message: newMessage } = req.body;
-    let updatedChat = await Chat.findByIdAndUpdate(
-        id,
-        { message: newMessage },
-     
-        { runValidators: true, new: true },
+    try {
 
-    );
-    let updateDate = await Chat.findByIdAndUpdate(
-        id,
-        {
-   updatedAt: new Date()},
-        
-    )
-    console.log(updatedChat);
-    console.log(updateDate);
-    res.redirect("/chats");
-    
+
+        let { id } = req.params;
+        let { message: newMessage } = req.body;
+        let updatedChat = await Chat.findByIdAndUpdate(
+            id,
+            { message: newMessage },
+
+            { runValidators: true, new: true },
+
+        );
+        let updateDate = await Chat.findByIdAndUpdate(
+            id,
+            {
+                updatedAt: new Date()
+            },
+
+        )
+        console.log(updatedChat);
+        console.log(updateDate);
+        res.redirect("/chats");
+    } catch (err) {
+        next(err);
+    }
+
+
 })
 //destroy route
 app.delete("/chats/:id", async (req, res) => {
     let { id } = req.params;
     let delchat = await Chat.findByIdAndDelete(id);
     res.redirect("/chats");
-      
+
+})
+//error handling middleware
+app.use((err, req, res, next) => {
+    let { status = 500, message = "Someerror occured" } = err;
+    res.status(status).send(message);
 })
