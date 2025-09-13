@@ -31,18 +31,18 @@ app.get("/", (req, res) => {
     res.send("Root is working")
 })
 
-function asyncWrap (fn){
-    return function(req,res,next){
-        fn(req,res,next).catch((err)=>next(err));
+function asyncWrap(fn) {
+    return function (req, res, next) {
+        fn(req, res, next).catch((err) => next(err));
     }
 }
 
 
-app.get("/chats",asyncWrap(async (req, res, next) => { 
- let chats = await Chat.find();
-        console.log("Chat received");
-        res.render("index.ejs", { chats });
-    
+app.get("/chats", asyncWrap(async (req, res, next) => {
+    let chats = await Chat.find();
+    console.log("Chat received");
+    res.render("index.ejs", { chats });
+
 }));
 
 
@@ -131,16 +131,13 @@ app.put("/chats/:id", async (req, res) => {
             {
                 updatedAt: new Date()
             },
-
-        )
+         )
         console.log(updatedChat);
         console.log(updateDate);
         res.redirect("/chats");
     } catch (err) {
         next(err);
     }
-
-
 })
 //destroy route
 app.delete("/chats/:id", async (req, res) => {
@@ -149,6 +146,10 @@ app.delete("/chats/:id", async (req, res) => {
     res.redirect("/chats");
 
 })
+app.use((err, req, res, next) => {
+    console.log(err.name);
+});
+
 //error handling middleware
 app.use((err, req, res, next) => {
     let { status = 500, message = "Someerror occured" } = err;
