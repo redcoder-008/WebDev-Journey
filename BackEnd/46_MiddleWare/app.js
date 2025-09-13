@@ -52,13 +52,23 @@ app.get("/err",(req,res)=>{
     abc==abc;
     res.send("Error page");
 })
+app.get("/admin",(req,res)=>{
+    throw  new ExpressError(403,"No Permission");
+});
 app.use((err,req,res,next)=>{
 
     console.log("------Error------");
-    res.send(err);
+    let {status =500, message="some Error" } = err;
+    res.status(status).send(message);
 })
 
 app.get("/random", (req, res) => {
 
     res.send("Random page");
 });
+
+app.use(("/admin"),(err,req,res,next)=>{
+    let status = 403;
+    res.status(status).send("Unauthorized");
+})
+
