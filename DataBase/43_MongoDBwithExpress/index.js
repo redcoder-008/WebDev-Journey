@@ -31,17 +31,19 @@ app.get("/", (req, res) => {
     res.send("Root is working")
 })
 
+function asyncWrap (fn){
+    return function(req,res,next){
+        fn(req,res,next).catch((err)=>next(err));
+    }
+}
 
-app.get("/chats", async (req, res, next) => {
-    try {
 
-        let chats = await Chat.find();
+app.get("/chats",asyncWrap(async (req, res, next) => { 
+ let chats = await Chat.find();
         console.log("Chat received");
         res.render("index.ejs", { chats });
-    } catch (err) {
-        next(err);
-    }
-})
+    
+}));
 
 
 //new chat 
