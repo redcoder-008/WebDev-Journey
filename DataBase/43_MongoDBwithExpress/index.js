@@ -131,7 +131,7 @@ app.put("/chats/:id", async (req, res) => {
             {
                 updatedAt: new Date()
             },
-         )
+        )
         console.log(updatedChat);
         console.log(updateDate);
         res.redirect("/chats");
