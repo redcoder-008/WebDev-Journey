@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const ExpressError = require("./ExpressError");
 
 app.listen(8080, () => {
     console.log("Listening on port 8080");
@@ -37,7 +38,7 @@ const checkToken= (req, res, next) => {
         // console.log("Data sent");
         next();
     }
-    throw new Error("Access Denied"); //passing own message 
+    throw new ExpressError(401,"Access Denied babu"); //passing own message 
 };
 app.use("/api",checkToken,(req,res)=>{
     res.send("You have access to data");
@@ -51,10 +52,10 @@ app.get("/err",(req,res)=>{
     abc==abc;
     res.send("Error page");
 })
-app.use("/err",(err,req,res,next)=>{
+app.use((err,req,res,next)=>{
 
     console.log("------Error------");
-    next();
+    res.send(err);
 })
 
 app.get("/random", (req, res) => {
