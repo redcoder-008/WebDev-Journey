@@ -46,9 +46,18 @@ app.use("/api",checkToken,(req,res)=>{
 app.use("/random", (req, res, next) => {
     console.log("I am only for random");
     next();
+});
+app.get("/err",(req,res)=>{
+    abc==abc;
+    res.send("Error page");
+})
+app.use("/err",(err,req,res,next)=>{
+
+    console.log("------Error------");
+    next();
 })
 
 app.get("/random", (req, res) => {
 
     res.send("Random page");
-})
+});
