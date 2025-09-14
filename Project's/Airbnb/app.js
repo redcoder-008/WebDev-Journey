@@ -71,6 +71,9 @@ app.get("/listings/:id", async (req, res) => {
 app.post(
   "/listings",
   wrapAsync(async (req, res, next) => {
+    if (!req.body.listing) {
+      throw new expressError(400, "Send valid data for listings");
+    }
     const newlisting = new Listing(req.body.listing);
     await newlisting.save();
     res.redirect("/listings");
@@ -97,10 +100,10 @@ app.delete("/listings/:id", async (req, res) => {
   res.redirect("/listings");
 });
 app.use((req, res, next) => {
-  next(new expressError(404, "Page not found"));
+  next(new expressError(404, "Page nai found"));
 });
 
 app.use((err, req, res, next) => {
-  let { statusCode, message } = err;
+  let { statusCode = 500, message = "Something went wrong" } = err;
   res.status(statusCode).send(message);
 });
