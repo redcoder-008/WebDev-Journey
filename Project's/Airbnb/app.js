@@ -100,10 +100,9 @@ app.delete("/listings/:id", async (req, res) => {
   res.redirect("/listings");
 });
 app.use((req, res, next) => {
-  next(new expressError(404, "Page nai found"));
+  next(new expressError(404, "Page not found"));
 });
-
 app.use((err, req, res, next) => {
   let { statusCode = 500, message = "Something went wrong" } = err;
-  res.status(statusCode).send(message);
+  res.render("error.ejs", { err });
 });
