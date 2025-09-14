@@ -7,6 +7,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
+const expressError = require("./utils/expressError.js");
 
 app.set(express.static(path.join(__dirname, "views")));
 app.set("view engine ", "ejs");
@@ -95,7 +96,11 @@ app.delete("/listings/:id", async (req, res) => {
   await Listing.findByIdAndDelete(id);
   res.redirect("/listings");
 });
+app.use((req, res, next) => {
+  next(new expressError(404, "Page not found"));
+});
 
 app.use((err, req, res, next) => {
-  res.send("SomeThing is wrong");
+  let { statusCode, message } = err;
+  res.status(statusCode).send(message);
 });
