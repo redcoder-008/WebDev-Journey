@@ -50,6 +50,16 @@ app.get("/", (req, res) => {
 
 // });
 
+const validateListing = (req, res, next) => {
+  let { error } = listingSchema.validate(req.body);
+  if (error) {
+    let errMsg = error.details.map((el) => el.message).join(",");
+    throw new expressError(400, error);
+  } else {
+    next();
+  }
+};
+
 //index route
 app.get("/listings", async (req, res) => {
   const allListings = await Listing.find({});
@@ -71,13 +81,8 @@ app.get("/listings/:id", async (req, res) => {
 //create route
 app.post(
   "/listings",
+  validateListing,
   wrapAsync(async (req, res, next) => {
-    let result = listingSchema.validate(req.body);
-    console.log(result);
-    if (result.error) {
-      throw new expressError(400, result.error);
-    }
-
     const newlisting = new Listing(req.body.listing);
 
     await newlisting.save();
