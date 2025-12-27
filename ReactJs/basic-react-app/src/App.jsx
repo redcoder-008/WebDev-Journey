@@ -1,7 +1,8 @@
 import "./App.css";
-function Title() {
-  return <h1>I am title</h1>;
-}
+
+import Title from "./Title.jsx";
+
+import Test2 from "./Test.jsx";
 function Description() {
   return <h3>I am description</h3>;
 }
@@ -11,6 +12,7 @@ function App() {
     <div>
       <button>Click me </button>
       <Title />
+      <Test2 />
       <Description />
     </div>
   );
