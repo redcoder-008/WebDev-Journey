@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Website Pricing</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        padding: 80px 20px;
+      }
+
+      .pricing-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+      }
+
+      .headline {
+        font-size: 3rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #60a5fa, #a78bfa, #c084fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 16px;
+      }
+
+      .subheadline {
+        font-size: 1.2rem;
+        opacity: 0.8;
+        margin-bottom: 60px;
+      }
+
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 40px 30px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #60a5fa, #a78bfa, #f0abfc);
+      }
+
+      .card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+      }
+
+      .plan-name {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #e0e7ff;
+      }
+
+      .price {
+        margin: 24px 0;
+      }
+
+      .original {
+        font-size: 1.3rem;
+        color: #64748b;
+        text-decoration: line-through;
+      }
+
+      .discounted {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #a78bfa, #c084fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .currency {
+        font-size: 1.8rem;
+        vertical-align: super;
+      }
+
+      .features {
+        text-align: left;
+        margin: 32px 0;
+      }
+
+      .features li {
+        margin: 16px 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.05rem;
+      }
+
+      .features i {
+        color: #60a5fa;
+        font-size: 1.3rem;
+      }
+
+      .popular {
+        position: absolute;
+        top: 16px;
+        right: -38px;
+        background: linear-gradient(45deg, #c084fc, #e879f9);
+        color: white;
+        padding: 8px 48px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transform: rotate(45deg);
+      }
+
+      .free-strip {
+        background: linear-gradient(90deg, #1e40af, #7c3aed);
+        padding: 28px;
+        border-radius: 16px;
+        font-size: 2.2rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .headline {
+          font-size: 2.4rem;
+        }
+        .discounted {
+          font-size: 2.8rem;
+        }
+        .free-strip {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pricing-container">
+      <h1 class="headline">Choose Your Perfect Website Plan</h1>
+      <p class="subheadline">
+        Professional websites at unbeatable launch prices
+      </p>
+
+      <div class="pricing-grid">
+        <!-- Basic Plan -->
+        <div class="card">
+          <h3 class="plan-name">Basic Plan</h3>
+          <div class="price">
+            <div class="original">NPR 2,499</div>
+            <div class="discounted">
+              <span class="currency">NPR</span> 1,999
+            </div>
+          </div>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> Online booking system</li>
+            <li><i class="fas fa-check-circle"></i> Service list & gallery</li>
+            <li><i class="fas fa-check-circle"></i> Fully mobile-friendly</li>
+            <li><i class="fas fa-check-circle"></i> WhatsApp contact button</li>
+          </ul>
+        </div>
+
+        <!-- Standard Plan (Popular) -->
+        <div class="card" style="transform: scale(1.05)">
+          <div class="popular">MOST POPULAR</div>
+          <h3 class="plan-name">Standard Plan</h3>
+          <div class="price">
+            <div class="original">NPR 10,000</div>
+            <div class="discounted">
+              <span class="currency">NPR</span> 3,999
+            </div>
+          </div>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> Everything in Basic</li>
+            <li><i class="fas fa-check-circle"></i> Admin panel</li>
+            <li>
+              <i class="fas fa-check-circle"></i> Service & content management
+            </li>
+            <li><i class="fas fa-check-circle"></i> Phone & email support</li>
+            <li>
+              <i class="fas fa-check-circle"></i> Professional premium design
+            </li>
+          </ul>
+        </div>
+
+        <!-- Professional Plan -->
+        <div class="card">
+          <h3 class="plan-name">Professional Plan</h3>
+          <div class="price">
+            <div class="original">NPR 5,999</div>
+            <div class="discounted">
+              <span class="currency">NPR</span> 4,799
+            </div>
+          </div>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> Everything in Standard</li>
+            <li>
+              <i class="fas fa-check-circle"></i> Automatic WhatsApp
+              confirmation
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Offer & promotion section
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Customer management list
+            </li>
+            <li><i class="fas fa-check-circle"></i> Ultra-premium design</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="free-strip">
+        FREE DOMAIN + HOSTING + MAINTENANCE FOR THE FIRST YEAR
+      </div>
+    </div>
+  </body>
+</html>
